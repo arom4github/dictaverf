@@ -1,0 +1,1 @@
+/var/dictaverf/pages_fr/dict3.php

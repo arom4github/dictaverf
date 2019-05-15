@@ -1,0 +1,24 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+
+RewriteRule (fr|ru)$ /?$1=1 [L]
+RewriteRule ^(intro|authors|about|dict|experiment|help)$ /?page=$1 [L]
+RewriteRule ^(authors3|about3|dict3|help3)$ /?page=$1 [L]
+RewriteRule ^(authorsj|aboutj|helpj)$ /?page=$1 [L]
+RewriteRule ^(authorsj1|aboutj1|helpj1)$ /?page=$1 [L]
+RewriteRule ^dictright$ /?page=dict&dict=right [L]
+RewriteRule ^dictback$ /?page=dict&dict=back [L]
+RewriteRule ^dictlist$ /?page=dict&dict=list&tt=12 [L]
+RewriteRule ^dictlist12$ /?page=dict&dict=list&tt=12 [L]
+RewriteRule ^dictlist33$ /?page=dict&dict=list&tt=33 [L]
+RewriteRule ^dictlist35$ /?page=dict3&dict=list&tt=35 [L]
+RewriteRule ^dictright35$ /?page=dict3&dict=right&tt=35 [L]
+RewriteRule ^dictback35$ /?page=dict3&dict=back&tt=35 [L]
+RewriteRule ^joint$ /?page=joint&dict=right [L]
+RewriteRule ^rjoint$ /?page=joint&dict=right [L]
+RewriteRule ^bjoint$ /?page=joint&dict=back [L]
+RewriteRule ^joint1$ /?page=joint1&dict=right [L]
+RewriteRule ^rjoint1$ /?page=joint1&dict=right [L]
+RewriteRule ^bjoint1$ /?page=joint1&dict=back [L]
+
+
