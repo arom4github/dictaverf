@@ -255,8 +255,8 @@ global $locale;
     <tr>
 		<td><b><?php echo $chr; ?></b></td>
 		<td><b>Group</b></td>
-		<td><b>Stimulus<b></td>
-		<td><b># of dififferent stimulus</b></td>
+		<td><b>Response<b></td>
+		<td><b># of different Responses</b></td>
 		<td><b>Total # </b></td>
     </tr>
 <?php                                                                                                                                                  
