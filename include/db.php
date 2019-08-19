@@ -1055,26 +1055,26 @@ function db_ljoint_dict($test, $base, $chr, $json){
 //                        $search_chr .= "AND lower(resp.word) like '".strtolower($chr[0])."%' ";
 //                   }
                     if(strtolower($chr[0]) == 'e'){
-                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '^((un|une|le|la|les) )*(e|é|è|ê){$rest}%' ";
+                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(e|é|è|ê){$rest}%' ";
                     }else 
 					if(strtolower($chr[0]) == 'a'){
-                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '^((un|une|le|la|les) )*(a|à|â){$rest}%' ";
+                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(a|à|â){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'o'){
-                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '^((un|une|le|la|les) )*(o|ô){$rest}%' ";
+                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(o|ô){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'c'){
-                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '^((un|une|le|la|les) )*(c|ç){$rest}%' ";
+                        $search_chr .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(c|ç){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'i'){
-                        $search_chr .= "AND  lower(resp.word)  SIMILAR  TO '^((un|une|le|la|les) )*(i|î){$rest}%' ";
+                        $search_chr .= "AND  lower(resp.word)  SIMILAR  TO '((un|une|le|la|les) )*(i|î){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'u'){
-                        $search_chr .= "AND  (lower(resp.word) SIMILAR TO '^((un|une|le|la|les) )*(u|û){$rest}%'  and ".
+                        $search_chr .= "AND  (lower(resp.word) SIMILAR TO '((un|une|le|la|les) )*(u|û){$rest}%'  and ".
 										"lower(resp.word) not similar to '(un|une) (1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|l|m|n|o|ô|p|q|r|s|t|v|w|x|y|z)%') ";
                     }else
 					if(strtolower($chr[0]) == 'l'){
-                        $search_chr .= "AND  (lower(resp.word) similar to '^((un|une|le|la|les) )*l{$rest}%' and ".
+                        $search_chr .= "AND  (lower(resp.word) similar to '((un|une|le|la|les) )*l{$rest}%' and ".
 										"lower(resp.word) not similar to '(la|le|les) (1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|m|n|o|ô|p|q|r|s|t|u|û|v|w|x|y|z)%') ";
                     }else
 					if(strtolower($chr[0]) == '?'){
