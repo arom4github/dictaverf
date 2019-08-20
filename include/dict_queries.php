@@ -256,7 +256,7 @@ global $locale;
 		<td><b><?php echo $chr; ?></b></td>
 		<td><b>Group</b></td>
 		<td><b>Response<b></td>
-		<td><b># of different Responses</b></td>
+		<td><b># of different responses</b></td>
 		<td><b>Total # </b></td>
     </tr>
 <?php                                                                                                                                                  
