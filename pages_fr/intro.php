@@ -19,7 +19,7 @@ if($lang == "ru"){
         </li>
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item mx-2"> <a class="nav-link" href="authors">вкладчики</a> </li>
+        <li class="nav-item mx-2"> <a class="nav-link" href="authors">Авторы</a> </li>
         <li class="nav-item mx-2"> <a class="nav-link" href="/fr"><span class="flag-icon flag-icon-fr"> </span></a></li>
       </ul>
     </div>

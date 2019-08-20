@@ -166,18 +166,8 @@
             </div>
         </fieldset>
     </div>
-
-
 </div>
-
-
 </div>
-
-
-
-
-
-
 
 
 <div id='mask'></div>
