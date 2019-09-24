@@ -1,6 +1,6 @@
 function getRenewal(){
 	var url = window.location.href;
-	/* 
+	/*
 		Description of the pattern
 		\/                - literal char
 		localhost         - literal chars
@@ -11,12 +11,12 @@ function getRenewal(){
 		.*                - zero or more chars
 		$                 - end of string
 	*/
-	var pattern = "dictaverf.nsu.ru\/([^\#]+).*$"; 
+	var pattern = "dictaverf.nsu.ru\/([^\#]+).*$";
 	var dict = url.match(pattern)[1];
 	switch(dict){
 		case "joint" :
 		case "joint1" :
-		case "rjoint" : 
+		case "rjoint" :
 			AdvSearch_rj();
 			break;
 		case "bjoint" :
@@ -29,7 +29,7 @@ function getRenewal(){
 			break;
 		case "dictback" :
 			AdvSearch_r();
-			break;		
+			break;
 	}
 }
 
@@ -85,7 +85,7 @@ function parse_adv_form(){
 			}else{
 				if (document.getElementsByName(table[i])[j].value != "")
 					str += "&"+table[i]+"="+document.getElementsByName(table[i])[j].value;
-			}			
+			}
 		}
 	}
     str += "&base=0";

@@ -1,6 +1,8 @@
 <?php include('include/dict.js.php'); ?>
 
-<div class="dict_content">
+
+<div class="py-5 text-center bg-light">
+  <div class="container">
     <div id="dict_menu">
         <?php
             $right_class = "dict";
@@ -17,19 +19,17 @@
                 $list_class .= "_act";
             }
         ?>
-		<table border=0 width="100%" cellpadding=0 cellspacing=0>
-		<td>
-		<table id="nav-tbl">
-        <td><a href="rjoint" class="<?php echo $right_class; ?>"><?php echo $locale['right']; ?></a></td>
-        <td><a href="bjoint"  class="<?php echo $back_class; ?>"><?php echo $locale['back']; ?></a></td>
+		<table>
+
+        <td><a href="rjoint" class="btn btn-outline-primary" padding="0px" ><?php echo $locale['right']; ?></a></td>
+        <td><a href="bjoint" class="btn btn-outline-primary" padding="0px" ><?php echo $locale['back']; ?></a></td>
 <!--        <td><a href="dictlist"  class="<?php echo $list_class; ?>"><?php echo $locale['anketas']; ?></a></td>
         <td><a href="#" class="dict" onClick="show_modal('db');"><?php echo "Select DB" ?></a></td> -->
-		</table>
-		</td>
-		<td>
+
+
 		<img src="imgs/ico/document-print.png" alt="print" align="right" width="20px" border="0"
                  onclick="my_print('<?php echo "{$dict}_{$_COOKIE["test"]}"; ?>');">
-		</td>
+
 		</table>
 		<?php
 //			$rows = db_get_tests();
@@ -51,6 +51,8 @@
     </div>
 
 
+
+
 <form action="" onsubmit="search_jword(); return false;">
   <div class="abc" style="text-align:center;">
         <?php
@@ -61,12 +63,19 @@
                   echo "<span style=\"line-height:50px;vertical-align:middle;\" class=\"abc_link\" onclick=\"chDict_rjoint('".$abc[$i]."');\$('#stimul_input').val('');erase_stimulus();\">".$abc[$i]."</span>";
             }
             echo "</div>";
+
             //echo "<br>&nbsp;{$locale['stimul']}:";
         ?>
-            <div class="ui input" style='height:50px;display:inline-block;float:right;width:50%;vertical-align:middle;padding-left:auto;padding-top:4px;'>
+
+
+            <div class="ui input" style='height:50px;display:inline-block;float:right;width:50%;vertical-align:middle;padding-left:auto;padding-top:14px;'>
               <div style="display:inline-block;margin-right:10px;"><?php echo $locale['stimul']; ?> : </div><input style="height:38px;margin-right:10px;" id="stimul_input" type="text" name="stimul" value="" placeholder="Search stimulus ..."/>
+
               <input class="ui black button" type="button" value="<?php echo $locale['searching']; ?>" onclick="search_jword();"><br>
+              <br />
             </div>
+
+
         <?php
 
 	         }
@@ -110,6 +119,8 @@
 					<span  class="abc_link" onclick="chDict_rs(499, 250);">499-250</span>&nbsp;
 					<span  class="abc_link" onclick="chDict_rs(249, 1);">249-1</span>&nbsp;
 			</div>
+
+      <font size="6" color="#12bbad">Обратный словарь</font>
 <!--
             <div id='word_order' class='abc_in'>
 				<?php echo "{$locale['resp']}:";?> <input type="text" name="stimul" value=""/>
@@ -145,6 +156,8 @@
             <span class="abc_link" onClick="getAnketa(+1);">След.</span>&nbsp;
             <span class="abc_link" onClick="getAnketa(+10);">&gt;&gt;</span>&nbsp;
             <span class="abc_link" onClick="getAnketa(+100);">&gt;&gt;&gt;</span>
+
+
 <!--
             <span class="abc_link" onClick="getAnketa(-100);">&lt;&lt;&lt;</span>&nbsp;
             <span class="abc_link" onClick="getAnketa(-10);">&lt;&lt;</span>&nbsp;
@@ -169,7 +182,29 @@
             </div>
         </fieldset>
     </div>
+
+
+
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div id='mask'></div>
 

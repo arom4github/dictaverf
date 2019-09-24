@@ -1,6 +1,8 @@
 <?php include('include/dict.js.php'); ?>
 
-<div class="dict_content">
+
+<div class="py-5 text-center bg-light">
+  <div class="container">
     <div id="dict_menu">
         <?php
             $right_class = "dict";
@@ -17,19 +19,19 @@
                 $list_class .= "_act";
             }
         ?>
-		<table border=0 width="100%" cellpadding=0 cellspacing=0>
-		<td>
-		<table id="nav-tbl">
-        <td><a href="dictright" class="<?php echo $right_class; ?>"><?php echo $locale['right']; ?></a></td>
-        <td><a href="dictback"  class="<?php echo $back_class; ?>"><?php echo $locale['back']; ?></a></td>
-        <td><a href="dictlist"  class="<?php echo $list_class; ?>"><?php echo $locale['anketas']; ?></a></td>
+		<table>
+
+
+        <td><a href="dictright" class="btn btn-outline-primary" padding="10px" ><?php echo $locale['right']; ?></a></td>
+        <td><a href="dictback"  class="btn btn-outline-primary" padding="10px"><?php echo $locale['back']; ?></a></td>
+        <td><a href="dictlist"  class="btn btn-outline-primary" padding="10px"><?php echo $locale['anketas']; ?></a></td>
 <!--        <td><a href="#" class="dict" onClick="show_modal('db');"><?php echo "Select DB" ?></a></td> -->
-		</table>
-		</td>
-		<td>
+
+
+
 		<img src="imgs/ico/document-print.png" alt="print" align="right" width="20px" border="0"
                  onclick="my_print('<?php echo "{$dict}_{$_COOKIE["test"]}"; ?>');">
-		</td>
+
 		</table>
 		<?php
 			$rows = db_get_tests();
@@ -41,19 +43,21 @@
 
 		?>
     </div>
+
     <div class="search_criteria" id="s_criteria">
-    <form action="">
-        <fieldset class="fs">
-            <legend class="search_criteria"><?php echo $locale['s_criteria']; ?></legend>
-            <?php include 'include/search_creteria.php';?>
-        </fieldset>
-    </form>
+        <form action="">
+            <fieldset class="fs">
+                <legend class="search_criteria"><?php echo $locale['s_criteria']; ?></legend>
+                <?php include 'include/search_creteria.php';?>
+            </fieldset>
+        </form>
     </div>
 
     <form action="" onsubmit="search_word(); return false;">
       <div class="abc" style="text-align:center;">
             <?php
             //Si dictionnaire direct ...
+
             if($dict == "right"){
                 $abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 //Building the span with onClick attribute for each letter
@@ -64,12 +68,20 @@
                 }
                 echo "</div>";
             ?>
+
                 <!-- FORMULAIRE DE STIMULUS -->
 
                 <div class="ui input" style='height:50px;display:inline-block;float:right;width:50%;vertical-align:middle;padding-left:auto;padding-top:4px;'>
                   <div style="display:inline-block;margin-right:10px;"><?php echo $locale['stimul']; ?> : </div><input style="height:38px;margin-right:10px;" id="stimul_input" type="text" name="stimul" value="" placeholder="Search stimulus ..."/>
                   <input class="ui black button" type="button" value="<?php echo $locale['searching']; ?>" onclick="search_word();"><br>
                 </div>
+
+              </br>
+              </br>
+              </br>
+              </br>
+            <font size="6" color="#12bbad">DICTIONNAIRE DIRECT</font>
+
             <?php
             //Si dictionnaire inverse ...
     	         }
@@ -115,6 +127,11 @@
     			</div>
 
 
+
+          <font size="6" color="#12bbad">DICTIONNAIRE INVERSE</font>
+
+
+
           <?php
           //Si questionnaires individuels ... (ne me concerne pas)
     	     }
@@ -127,22 +144,33 @@
 			  <span class="abc_link" onClick="getAnketa(+1);"><?php echo $locale['next'] ?>.</span>&nbsp;
 			  <span class="abc_link" onClick="getAnketa(+10);">&gt;&gt;</span>&nbsp;
 			  <span class="abc_link" onClick="getAnketa(+100);">&gt;&gt;&gt;</span>
+        <span>          <br />
+                  <font size="6" color="#12bbad">Questionnaires Individuels</font> </span>
 		  <?php
           }
           ?>
 
       </div> <!-- div abc -->
+
+
+
     </form>
 
-    <div class="searc_result" style="margin-top:2%;">
+
+
+    <div class="searc_result" style="margin-top:12%; margin-left: auto;
+    margin-right: auto;" >
         <fieldset class="fs">
             <legend class="search_result"><?php echo $locale['s_result']; ?></legend>
             <div id="results">
-
             </div>
         </fieldset>
     </div>
+
+
 </div>
+</div>
+
 <div id='mask'></div>
 
 <!-- Popup WordCloud RightDict -->
@@ -204,13 +232,28 @@
 
 <div id='mask'></div>
 <div id="bdict_selector" class="bdict_selector">
-	Выбор порядок представления информации:
-	<ul>
-		<li><a href="#" name="abc" class="order">В алфавитном порядку реакций</a>
-		<li><a href="#" name="stim" class="order">По количеству стимулов</a>
-		<li><a href="#" name="resp" class="order">По количеству реакций</a>
-		<li><a href="#" name="word" class="order">По отдельному слову</a>
-	</ul>
+
+  <?php
+      if($lang == "ru" ){ ?>
+
+      	Выбор порядок представления информации:
+      	<ul>
+      		<li><a href="#" name="abc" class="order">В алфавитном порядку реакций</a>
+      		<li><a href="#" name="stim" class="order">По количеству стимулов</a>
+      		<li><a href="#" name="resp" class="order">По количеству реакций</a>
+      		<li><a href="#" name="word" class="order">По отдельному слову</a>
+      	</ul>
+  <?php } else { ?>
+  	Choisissez ici dans quel ordre vous voulez présenter cette information:
+  	<ul>
+      <li><a href="#" name="abc" class="order">Ordre alphabétique</a>
+      <li><a href="#" name="stim" class="order">Nombre de stimulus</a>
+      <li><a href="#" name="resp" class="order">Nombre de réponses</a>
+      <li><a href="#" name="word" class="order">Recherche spécifique</a>
+  	</ul>
+  <?php } ?>
+
+
 </div>
 
 <div id="db_selector" class="db_selector">
@@ -225,4 +268,7 @@
 ?>
 	</ul>
 </div>
+
+
+
 <?php $url="http://dictaverf.nsu.ru/dict{$dict}"; ?>

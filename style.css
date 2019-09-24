@@ -34,12 +34,12 @@
 	background-color: green;
 }
 .menu_bg,
-.content{
+/*.content{
 	width: 955px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color:#eeeeee;
-}
+}*/
 .menu_bg{
 	height: 100px;
 	text-align:left;
@@ -102,7 +102,7 @@ table#nav-tbl{
 #nav-menu  a:link,
 #nav-menu  a:visited
 {
-	color:#176a1d;
+	color:#12bbad;
 	text-align:center;
 	padding-top:4px;
 	text-decoration:none;
@@ -180,7 +180,7 @@ table#nav-tbl{
     font-size: 12px;
     text-decoration: none;
     font-weight: normal;
-    color:#176a1d;
+    color:#12bbad;
 }
 .dict_act,
 .dict_act a:visited,
@@ -199,6 +199,9 @@ table#nav-tbl{
     font-size: 12px;
     font-family: Arial,Helvetica,sans-serif;
     border:0;
+		margin-left: auto;
+    margin-right: auto;
+
 }
 .criteria{
     font-size: 12px;
@@ -215,7 +218,7 @@ table#nav-tbl{
 		width: 100%;
 }
 .abc_link, .db_link{
-    color:#176a1d;
+    color:#12bbad;
     cursor:pointer;
     font-weight: bold;
     font-family: Arial,Helvetica,sans-serif;
@@ -270,7 +273,7 @@ table#nav-tbl{
     font-size: 14px;
     text-decoration: none;
     font-weight: normal;
-    color:#176a1d;
+    color:#12bbad;
 }
 
 .bdict_selector, .db_selector{
@@ -315,7 +318,7 @@ table#nav-tbl{
     font-size: 14px;
     text-decoration: none;
     font-weight: normal;
-    color:#176a1d;
+    color:#12bbad;
 }
 
 
