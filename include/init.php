@@ -16,7 +16,7 @@ setcookie("pref_lang", $lang, time()+36000, "/");
 
 $dict = "";
 if(!isset($_GET['page'])){
-    $page = "intro"; //"about";
+    $page = "about";
 //    $dict = "right";
 }else{
     $page = $_GET['page'];

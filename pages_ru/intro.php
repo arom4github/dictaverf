@@ -1,4 +1,4 @@
-<script type="text/javascript" language="javascript">
+<script type="text/javascript" language="javascript>
     function do_onLoad(){}
 </script>
 
@@ -11,10 +11,10 @@ if($lang == "ru"){
 ?>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp; главная</i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp;главная</i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
       <ul class="navbar-nav">
-        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="intro" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="intro" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/about">ФАС</a> <a class="dropdown-item" href="aboutj1">САНФ</a> <a class="dropdown-item" href="aboutj">САНФH</a> <a class="dropdown-item" href="about3">ФАСН-2019<br></a></div>
         </li>
       </ul>

@@ -71,7 +71,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
 	<div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp;главная</i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 		<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
 			<ul class="navbar-nav">
-				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/about">ФАС</a> <a class="dropdown-item" href="aboutj1">САНФ</a> <a class="dropdown-item" href="aboutj">САНФH</a> <a class="dropdown-item" href="about3">ФАСН-2019<br></a></div>
 				</li>
 			</ul>
@@ -127,7 +127,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
 	<div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp;главная</i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 		<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
 			<ul class="navbar-nav">
-				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/about">ФАС</a> <a class="dropdown-item" href="aboutj1">САНФ</a> <a class="dropdown-item" href="aboutj">САНФH</a> <a class="dropdown-item" href="about3">ФАСН-2019<br></a></div>
 				</li>
 			</ul>
@@ -185,7 +185,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
 	<div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp;главная</i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 		<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
 			<ul class="navbar-nav">
-				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/about">ФАС</a> <a class="dropdown-item" href="aboutj1">САНФ</a> <a class="dropdown-item" href="aboutj">САНФH</a> <a class="dropdown-item" href="about3">ФАСН-2019<br></a></div>
 				</li>
 			</ul>
@@ -242,7 +242,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
   	<div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp;главная</i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
   		<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
   			<ul class="navbar-nav">
-  				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+  				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
   					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/about">ФАС</a> <a class="dropdown-item" href="aboutj1">САНФ</a> <a class="dropdown-item" href="aboutj">САНФH</a> <a class="dropdown-item" href="about3">ФАСН-2019<br></a></div>
   				</li>
   			</ul>
@@ -335,7 +335,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
                   <a class="item" href="/dict">Словари</a>
                   <a class="item" href="/help">Помощь</a>
                   <a class="item" href="/fr"><span class="flag-icon flag-icon-fr"></span></a>
-                  <a class="nav-link">изменить словарьe&nbsp;</a>
+                  <a class="nav-link">выбрать словарь&nbsp;</a>
                   <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                   <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
                   <a class="item" href="/aboutj"><?php echo $locale["DINAFN"]; ?></a>
@@ -350,7 +350,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
                   <div class="ui simple dropdown item">
-                    <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+                    <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
                     <div class="menu">
                       <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                       <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
@@ -442,7 +442,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
                     <a class="item" href="/joint1">Словари</a>
                     <a class="item" href="/helpj1">Помощь</a>
                     <a class="item" href="/fr"><span class="flag-icon flag-icon-fr"></span></a>
-                    <a class="nav-link">изменить словарьe&nbsp;</a>
+                    <a class="nav-link">выбрать словарь&nbsp;</a>
                     <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                     <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
                     <a class="item" href="/aboutj"><?php echo $locale["DINAFN"]; ?></a>
@@ -457,7 +457,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                     <div class="ui simple dropdown item">
-                      <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+                      <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
                       <div class="menu">
                         <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                         <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
@@ -550,7 +550,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
                       <a class="item" href="/joint">Словари</a>
                       <a class="item" href="/helpj">Помощь</a>
                       <a class="item" href="/fr"><span class="flag-icon flag-icon-fr"></span></a>
-                      <a class="nav-link">изменить словарьe&nbsp;</a>
+                      <a class="nav-link">выбрать словарь&nbsp;</a>
                       <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                       <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
                       <a class="item" href="/aboutj"><?php echo $locale["DINAFN"]; ?></a>
@@ -565,7 +565,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                       <div class="ui simple dropdown item">
-                        <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+                        <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
                         <div class="menu">
                           <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                           <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
@@ -658,7 +658,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
                         <a class="item" href="/dict3">Словари</a>
                         <a class="item" href="/help3">Помощь</a>
                         <a class="item" href="/fr"><span class="flag-icon flag-icon-fr"></span></a>
-                        <a class="nav-link">изменить словарьe&nbsp;</a>
+                        <a class="nav-link">выбрать словарь&nbsp;</a>
                         <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                         <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
                         <a class="item" href="/aboutj"><?php echo $locale["DINAFN"]; ?></a>
@@ -673,7 +673,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
                         <div class="ui simple dropdown item">
-                          <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+                          <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
                           <div class="menu">
                             <a class="item" href="/about"><?php echo $locale["DAF"]; ?></a>
                             <a class="item" href="/aboutj1"><?php echo $locale["DINAF"]; ?></a>
@@ -702,7 +702,7 @@ elseif((($page=="experiment")||($page=="about")||($page=="authors") || ($page ==
 		<div class="container"> <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home">&nbsp; </i></a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 			<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
 				<ul class="navbar-nav">
-					<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="intro" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">изменить словарьe&nbsp;</a>
+					<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="intro" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">выбрать словарь&nbsp;</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/about">ФАС</a> <a class="dropdown-item" href="aboutj1">САНФ</a> <a class="dropdown-item" href="aboutj">САНФH</a> <a class="dropdown-item" href="about3">ФАСН-2019<br></a></div>
 					</li>
 				</ul>
@@ -775,7 +775,7 @@ if($lang == "ru"){
               <div class="col-md-12">
                 <h6 class=""><br><br><br></h6>
               </div>
-            </div><a href="https://www.nsu.ru/n/"><img class="img-fluid d-block" src="../include/nsu_ru.png" width="150%" height="100%" style=""></a>
+            </div><a href="https://www.nsu.ru/n/"><img class="img-fluid d-block" src="imgs/NSU_logo_Russian_Green.png" width="150%" height="100%" style=""></a>
             <div class="row">
               <div class="col-md-12">
                 <h6 class="" contenteditable="false"><br><br></h6>
@@ -807,7 +807,7 @@ if($lang == "ru"){
               <div class="col-md-12">
                 <h6 class=""><br><br><br></h6>
               </div>
-            </div><a href="https://english.nsu.ru/"><img class="img-fluid d-block" src="../include/nsu_en.png" style=""></a>
+            </div><a href="https://english.nsu.ru/"><img class="img-fluid d-block" src="imgs/NSU_logo_English_Green.png" style=""></a>
             <div class="row">
               <div class="col-md-12">
                 <h6 class="" contenteditable="false"><br><br></h6>
