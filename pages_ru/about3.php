@@ -13,7 +13,9 @@
                     <h1 class="mb-3"><h2>Словарь французских ассоциаций 2019 (ФАСН-2019)</h1><br>
                     <p class="text-justify">Этот словарь основан на ответах на опросники, заполненные с октября 2018 года. Помимо исправления&#39;орфографии и пунктуации, мы объединили ответы: ответы, выраженные в разных формах (мужской - женский&#39;род прилагательного, формы глагола) находятся под тем же заголовком, статьи и предлоги удаляются. Этот словарь не показывает синтагматические связи между стимулами и реакциями,
                     но он позволяет лучше выделить семантические связи между ними, что особенно важно при&#39;разработке обратного словаря.
-                  </p>
+                   </p>
+		   <p class="text-justify">Вам от 20 до 30 лет? Французский ваш  родной язык? Примите участие в <a href=/mkdict_25/>тесте</a>!
+		   </p>
                   </div>
                 </div>
               </div>
@@ -53,6 +55,7 @@
                     mais il permet de mieux mettre ne évidence les liens sémantiques entre eux, cela est particulièrement important dans
                     l&#39;élaboration du dictionnaire inverse.
                   </p>
+		   <p class="text-justify">Vous avez entre 20 et 30 ans? Le français est votre langue maternelle ? Participez au <a href=/mkdict_25/>test</a>!
                   </div>
                 </div>
               </div>
