@@ -8,8 +8,8 @@ function anketa_form($err){
 
 ?>
 <form method="post">
-<table border=0 width=400px class="anketa">
-<tr><td colspan=2><center><?php echo $locale['anketa_title']; ?></center>
+<table border=0 width="50%" min-width="400px"  class="anketa">
+<tr><td colspan=2><center><h1><?php echo $locale['anketa_title']; ?></h1></center>
 	</td>
 </tr>
 <tr><td colspan=2><center><?php echo $err; ?></center>

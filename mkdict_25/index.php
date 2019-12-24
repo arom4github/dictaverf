@@ -24,7 +24,7 @@ if(!isset($_SESSION['test_id']) || ($_SESSION['test_id']<13 && $_SESSION['test_i
 	return;
 }
 
-if($_SESSION['test_id'] == 35) $_SESSION['i_lang'] = 'rf'; // special case
+if($_SESSION['test_id'] == 35) $_SESSION['i_lang'] = 'fr'; // special case
 
 include("inc/lang_".$_SESSION['i_lang'].".php");
 
@@ -36,9 +36,13 @@ include("inc/lang_".$_SESSION['i_lang'].".php");
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<table width="100%" height="100%" border="0">
-<tr height="100%">
-	<td valign="center">
+<table width="100%" height="100%" border="0" style="border-spacing:0px;">
+<tr height="30%" style="background-color: #12bbad">
+	<td width="50%"><h1 style="color:#FFFFFF; padding-left:30%">Dictionnaires des associations verbales du Français</h1></td>
+	<td width="50%"><img src="../imgs/NSU_logo_English_Green.png" style="width:50%"></td>
+</tr>
+<tr height="70%">
+	<td valign="center" colspan=2>
 		<center>
 
 <?php
@@ -124,6 +128,10 @@ if($_SESSION['stage'] == 1){
 }
 
 if($_SESSION['stage'] == 2){
+        if(isset($_SESSION['times']) && $_SESSION['times'] > 0)
+		$_SESSION['times']++;
+	else
+		$_SESSION['times'] = 1;
 	if(isset($_POST['words'])){
 		preg_match_all("|([0-9]+):([^;]+);|", $_POST['words'], $out, PREG_PATTERN_ORDER);
 		write_log("Saved words. failed={$_POST['failed']} count=".count($out[0]));
@@ -132,7 +140,13 @@ if($_SESSION['stage'] == 2){
 			// check for error
 			write_log("Saved words ".(($err == 0)? "OK":"failed ".$err));
 		}
-		$_SESSION['stage'] = 3; //out
+		if($_SESSION['times'] == 5) 
+			$_SESSION['stage'] = 3; //out
+		else{
+			$_SESSION['stage'] = 2; //participate up to 4 times
+			collect_form();
+			write_log("Print collection form");
+		}
 	}else{
 		collect_form();
 		write_log("Print collection form");
@@ -150,7 +164,6 @@ if($_SESSION['stage'] == 3){
 		</center>
 	</td>
 </tr>
-<tr><td align=center>Designed by <a href="http://ccfit.nsu.ru/arom/">ARom</a></td></tr>
 </table>
 </body>
 </html>

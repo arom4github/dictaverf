@@ -45,8 +45,8 @@ function collect_form(){
 	var empty = 0;
 
 	function displ(){
-		obj.innerHTML = w_names[w]+ '&nbsp;==&gt;&nbsp;<input name="resp" type=text/>'+
-			'<p align=right><input type=button value="<?php echo $locale['next']?>" onClick="next_word();">';
+		obj.innerHTML = '<center>' + w_names[w]+ '&nbsp;==&gt;&nbsp;<input name="resp" type=text/>'+
+			'&nbsp;<input type=button value="<?php echo $locale['next']?>" onClick="next_word();"></center>';
 		document.forms[0].resp.focus();
 	}
 	
@@ -114,7 +114,7 @@ function collect_form(){
 <input type="hidden" name="words" value="">
 <input type="hidden" name="failed" value="0">
 <input type="hidden" name="count" value="0">
-<table border=0 width=400px height=300px class="login">
+<table border=0 width="50%" min-width=400px class="login">
 <tr>
 		<td id=t_left align=right>&nbsp;</td>
 </tr>

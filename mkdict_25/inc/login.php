@@ -5,13 +5,13 @@ global $locale;
 global $_SESSION 
 ?>
 
-<table border=0 width="400px" height="150px" class="login">
+<table border=0 width="50%" min-width="400px" height="150px" class="login">
 <tr>
 <td><center>&nbsp;<?php echo ($err != '')? $locale[$err]: ""; ?></center></td>
 </tr>
 <tr>
 	<td><center>
-	<b><?php echo $locale['title'];?></b>
+	<h1><?php echo $locale['title'];?></h1>
 	<p align=justify>
 	<?php echo $locale['test_descr'];?>
 	</center></td>
