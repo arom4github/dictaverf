@@ -6,11 +6,10 @@ function anketa_form($err){
 	global $locale;
 	global $native_lang;
 
-	$myJson = json_decode(getCriteria($_SESSION['test_id']),false);
 ?>
 <form method="post">
-<table border=0 width="50%" min-width="400px"  class="anketa">
-<tr><td colspan=2><center><h1><?php echo $locale['anketa_title']; ?></h1></center>
+<table border=0 width=400px class="anketa">
+<tr><td colspan=2><center><?php echo $locale['anketa_title']; ?></center>
 	</td>
 </tr>
 <tr><td colspan=2><center><?php echo $err; ?></center>
@@ -48,7 +47,7 @@ function anketa_form($err){
 	</td>
 <tr><td align=right valign=top><?php echo $locale['lang']; ?>:&nbsp;</td>
 	<td>
-		<select name="lang">
+		<select name="lang_n">
 			<?php
 				for($i=0; $i<count($native_lang); $i++){
 					echo "<option value=\"{$native_lang[$i]}\" ";
@@ -56,20 +55,21 @@ function anketa_form($err){
 				}
 			?>
 		</select><br>
-		Autre <input type=text name="other">
+		Other <input type=text name="other">
 	</td>
 </tr>
 <tr><td align=right><?php echo $locale['city']; ?>:&nbsp;</td>
         <td><input type=text name="city"></td>
 <tr><td align=right><?php echo $locale['region']; ?>:&nbsp;</td>
         <td>
-	<select name="reg">
+	<select name="region">
 			<?php
-			foreach( $myJson->reg->values as $key=>$obj){
-				if($key == '_empty_') continue;
-				echo "<option value=\"".($key)."\" ";
-				echo ">{$obj->fr}</option>";
-			};
+			$i = 1;
+			while(isset($locale["reg".$i])){                                                                                                        
+					echo "<option value=\"".($i+1)."\" ";
+					echo ">{$locale["reg".$i]}</option>";
+			    $i++;
+			}
 			?>
 	</select>
 	</td>
