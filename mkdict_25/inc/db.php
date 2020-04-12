@@ -1,11 +1,5 @@
 <?php
 
-//$db_host = '193.124.208.124';
-//$db_user = 'dict';
-//$db_pass = '1q2w3e';
-//$db_enc = 'UTF8';
-//$db_name = 'dict';
-
 $Last_key_lang = "";
 $Test_id = "";
 
@@ -116,7 +110,7 @@ function db_save_words($words){
 	preg_match_all("|([0-9]+):([^;]+);|", $_POST['words'], $out, PREG_PATTERN_ORDER);
 	for($i=0; $i<count($out[0]); $i++){
 			$w = str_replace("'", "''", trim($out[2][$i]));
-			write_log("INSERT into resp (id_w, id_u, word) VALUES ({$out[1][$i]}, lid, '{$w}');");
+			write_log("INSERT into resp (id_w, id_u, word, origword) VALUES ({$out[1][$i]}, lid, '{$w}', '{$w}');");
 	}
 	
 	
@@ -149,8 +143,8 @@ function db_save_words($words){
 		//echo "<br>==== {$str} returns {$lid} ====";	
 		for($i=0; $i<count($out[0]); $i++){
 			$w = str_replace("'", "''", trim($out[2][$i]));
-			$str = "INSERT into resp (id_w, id_u, word) ";
-			$str .= "VALUES ({$out[1][$i]}, {$lid}, '{$w}')";
+			$str = "INSERT into resp (id_w, id_u, word, origword) ";
+			$str .= "VALUES ({$out[1][$i]}, {$lid}, '{$w}', '{$w}')";
 			$result = pg_exec ($conn, $str);
 			if(!$result){ @pg_exec ($conn, "ROLLBACK"); disconnect($conn); return 2;}
 			pg_freeresult($result);
