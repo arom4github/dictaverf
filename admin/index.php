@@ -5,7 +5,8 @@
 
 <?php 
 
-$str = "select  description, count(*)  from resp inner join dict on resp.id_w = dict.id left join tests on tests.id=test group by description, test  order  by test;";
+//$str = "select  description, count(*)  from resp inner join dict on resp.id_w = dict.id left join tests on tests.id=test group by description, test  order  by test;";
+$str = "select description, id_t, ii.count, count(*) from users_jsonb left join (select dict.test, count(*) from resp left join dict on dict.id=resp.id_w group by dict.test) as ii on ii.test= users_jsonb.id_t left join tests on tests.id=id_t group by id_t, description, ii.count order by id_t;";
 
 $conn = connect($db_host, $db_port, $db_name, $db_user, $db_pass, $db_enc);
 if($conn){
@@ -14,9 +15,7 @@ if($conn){
 	echo "<table border=1><tr><td><b>Dict</b></td><td><b>Responds</b></td><td>Questinaries</td></tr>";
  	for($i=0; $i< pg_numrows($result); $i++){
         	$arr = pg_fetch_array($result, $i);
-		$div = 100.;
-		if(preg_match('/25/',$arr[0])) $div = 25.;
-		echo "<tr><td>{$arr[0]}</td><td>{$arr[1]}</td><td>~".floor($arr[1]/$div)."</td></tr>";
+		echo "<tr><td>{$arr[0]}</td><td>{$arr[2]}</td><td>".$arr[3]."</td></tr>";
 	}	
 	echo "</table>";
      }else{
