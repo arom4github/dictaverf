@@ -125,6 +125,8 @@ $locale=Array(
 'DINAF' => "Dictionnaire des normes associatives <br> de la Francophonie (DINAF)",
 'DINAFN' => "Dictionnaire des normes associatives <br> de la Francophonie normalisé (DINAFN)",
 'DINAFN1' => "Dictionnaire des associations du français 2019 (DAF-2019)",
+'FAS1-RDSD' => "Словарь французских ассоциаций (ФАС1-сокр)",
+'FAS2-RDSD' => "Словарь французских ассоциаций (ФАС2-сокр)",
 'test_descr' => "Le but du test est d'établir un dictionnaire d'associations;
 		Pour cela, nous vous proposons une liste de 100 mots. Pour chaque mot
 		vous devez indiquer le mot avec lequel il s'associe pour vous, par exemple

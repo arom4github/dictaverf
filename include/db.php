@@ -569,34 +569,34 @@ function db_back_dict($test, $base, $chr, $sort_order, $sr, $srf, $srt, $json){
                  if(strlen($chr)>0) {
 					$rest = substr(strtolower($chr), 1);
                     if(strtolower($chr[0]) == 'e'){
-                        $search_char .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(e|é|è|ê){$rest}%' ";
+                        $search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(e|é|è|ê){$rest}%' ";
                     }else 
 					if(strtolower($chr[0]) == 'a'){
-                        $search_char .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(a|à|â){$rest}%' ";
+                        $search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(a|à|â){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'o'){
-                        $search_char .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(o|ô){$rest}%' ";
+                        $search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(o|œ|ô){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'c'){
-                        $search_char .= "AND  lower(resp.word) SIMILAR  TO '((un|une|le|la|les) )*(c|ç){$rest}%' ";
+                        $search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(c|ç){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'i'){
-                        $search_char .= "AND  lower(resp.word)  SIMILAR  TO '((un|une|le|la|les) )*(i|î){$rest}%' ";
+                        $search_char .= "AND  lower(resp.word_inv)  SIMILAR  TO '((un|une|le|la|les) )*(i|î){$rest}%' ";
                     }else
 					if(strtolower($chr[0]) == 'u'){
-                        $search_char .= "AND  (lower(resp.word) SIMILAR TO '((un|une|le|la|les) )*(u|û){$rest}%'  and ".
+                        $search_char .= "AND  (lower(resp.word_inv) SIMILAR TO '((un|une|le|la|les) )*(u|û){$rest}%'  and ".
 										"lower(resp.word) not similar to '(un|une) (1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|l|m|n|o|ô|p|q|r|s|t|v|w|x|y|z)%') ";
                     }else
 					if(strtolower($chr[0]) == 'l'){
-                        $search_char .= "AND  (lower(resp.word) similar to '((un|une|le|la|les) )*l{$rest}%' and ".
+                        $search_char .= "AND  (lower(resp.word_inv) similar to '((un|une|le|la|les) )*l{$rest}%' and ".
 										"lower(resp.word) not similar to '(la|le|les) (1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|m|n|o|ô|p|q|r|s|t|u|û|v|w|x|y|z)%') ";
                     }else
 					if(strtolower($chr[0]) == '?'){
-                        $search_char .= "AND  lower(resp.word)  NOT SIMILAR  TO ".
-							"'(1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|l|m|n|o|ô|p|q|r|s|t|u|û|v|w|x|y|z)%' ";
+                        $search_char .= "AND  lower(resp.word_inv)  NOT SIMILAR  TO ".
+							"'(1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|l|m|n|o|œ|ô|p|q|r|s|t|u|û|v|w|x|y|z)%' ";
                     }else { 
 
-                        $search_char .= "AND lower(resp.word) similar to '((un|une|le|la|les) )*".strtolower($chr)."%' ";
+                        $search_char .= "AND lower(resp.word_inv) similar to '((un|une|le|la|les) )*".strtolower($chr)."%' ";
                     }
                 }
 			}else{
@@ -616,9 +616,9 @@ function db_back_dict($test, $base, $chr, $sort_order, $sr, $srf, $srt, $json){
 							where dict.test={$test} and resp.word<>'-' {$search} 
 							group by rw, dict.word, ch {$search1} order by rw, cnt desc, dict.word;");*/
 		
-		 $result = pg_exec ($conn, "select dict.word, resp.word as rw, count(dict.word) as cnt, resp.checked as ch 
+		 $result = pg_exec ($conn, "select dict.word, resp.word_inv as rw, count(dict.word) as cnt, resp.checked as ch 
 									from resp inner join dict on dict.id=resp.id_w
-									where resp.id_u in (Select users_jsonb.id from users_jsonb where users_jsonb.id_t = {$test} $search) and resp.word<>'-' $search_char
+									where resp.id_u in (Select users_jsonb.id from users_jsonb where users_jsonb.id_t = {$test} $search) and resp.word_inv<>'-' $search_char
 									group by rw, dict.word, ch 
 									order by rw, cnt desc, dict.word;");
 		

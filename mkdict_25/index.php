@@ -45,6 +45,20 @@ include("inc/lang_".$_SESSION['i_lang'].".php");
 	<td valign="center" colspan=2>
 		<center>
 
+<!-- Experiment is closed -->
+		<img src="https://navigato.ru/content/news/image17413.jpg" border=0 width=30%><br>
+		Le test est désormais terminé, nous vous remercions de votre participation et vous <br> 
+		invitons à consulter les mises à jour sur le site 
+		<a href="https://sites.google.com/site/kevokcemot/home">https://sites.google.com/site/kevokcemot/home</a> <br>
+		ou la page FaceBook du projet <a href="https://www.facebook.com/dictaverf">https://www.facebook.com/dictaverf</a>
+		</center>
+	</td>
+</tr>
+</table>
+</body>
+</html>
+<?php exit; ?>
+<!-- Experiment is closed -->
 <?php
 if(!isset($_SESSION['stage'])){
 	$_SESSION['stage']=0; // login

@@ -54,6 +54,11 @@ function AdvSearch_b(){
 
 function parse_adv_form(){
 	str = "";
+	str += '&chr=';
+    str += document.forms[0].chr.value;
+	str += '&sort=';
+    str += document.forms[0].sort.value;
+        return str;
 	// We retrieve the criterias from GET and transform it into an array
 	var criterias = document.forms[0].criterias.value;
 	var table = criterias.split("|");
@@ -89,10 +94,6 @@ function parse_adv_form(){
 		}
 	}
     str += "&base=0";
-	str += '&chr=';
-    str += document.forms[0].chr.value;
-	str += '&sort=';
-    str += document.forms[0].sort.value;
 	return str;
 }
 

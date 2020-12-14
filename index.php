@@ -40,12 +40,29 @@
 				"dict" => array("/dict3", $locale['dict']),
 				"help" => array("/help3", $locale['help']),
 				"dicts"=> array("/about", $locale['chg_dict'])),
+		"FAS1-RDSD" => array(
+				"home" => array("/", $locale['home']),
+				"proj" => array("/about5", $locale['about']),
+				"auth" => array("/authors5", $locale['authors']),
+				"dict" => array("/dict5", $locale['dict']),
+				"help" => array("/help5", $locale['help']),
+				"dicts"=> array("/about", $locale['chg_dict'])),
+		"FAS2-RDSD" => array(
+				"home" => array("/", $locale['home']),
+				"proj" => array("/about4", $locale['about']),
+				"auth" => array("/authors4", $locale['authors']),
+				"dict" => array("/dict4", $locale['dict']),
+				"help" => array("/help4", $locale['help']),
+				"dicts"=> array("/about", $locale['chg_dict'])),
 	);
-	$menu_dd = array($locale["DAF"]=>"/about", $locale["DINAF"]=>"/aboutj1", $locale["DINAFN"]=>"/aboutj", $locale["DINAFN1"]=>"/about3");
+	$menu_dd = array($locale["DAF"]=>"/about", $locale["DINAF"]=>"/aboutj1", $locale["DINAFN"]=>"/aboutj", 
+			 $locale["DINAFN1"]=>"/about3",$locale["FAS1-RDSD"]=>"/about5",$locale["FAS2-RDSD"]=>"/about4");
 	$page2menu = array("experiment" => "DAF", "about"=>"DAF", "authors"=>"DAF", "help"=>"DAF", "dict"=>"DAF",
 			   "aboutj1"=>"DINAF", "authorsj1"=>"DINAF", "helpj1"=>"DINAF","joint1"=>"DINAF", "bjoint1"=>"DINAF",
 			   "aboutj"=>"DINAFN", "authorsj"=>"DINAFN", "helpj"=>"DINAFN", "joint"=>"DINAFN", "bjoint"=>"DINAFN",
-			   "about3"=>"DAF-2019", "authors3"=>"DAF-2019", "help3"=>"DAF-2019","dict3"=>"DAF-2019");
+			   "about3"=>"DAF-2019", "authors3"=>"DAF-2019", "help3"=>"DAF-2019","dict3"=>"DAF-2019",
+			   "about4"=>"FAS2-RDSD", "authors4"=>"FAS2-RDSD", "help4"=>"FAS2-RDSD","dict4"=>"FAS2-RDSD",
+			   "about5"=>"FAS1-RDSD", "authors5"=>"FAS1-RDSD", "help5"=>"FAS1-RDSD","dict5"=>"FAS1-RDSD");
 	function print_menu($_menu_, $lang){
 		global $menu, $menu_dd;
 		echo <<<EOL
@@ -165,18 +182,25 @@ if($lang == "ru"){
 <?php
 	if(       ($page=="about")
 		||($page=="about3")
+		||($page=="about4")
+		||($page=="about5")
 		||($page=="aboutj")
 		||($page=="aboutj1")
 		||($page=="help")
 		||($page=="help3")
+		||($page=="help4")
+		||($page=="help5")
 		||($page=="helpj")
 		||($page=="helpj1")
 		||($page=="authors")
 		||($page=="authors3")
+		||($page=="authors4")
 		||($page=="authorsj")
 		||($page=="authorsj1")
 		||($page=="dict")
 		||($page=="dict3")
+		||($page=="dict4")
+		||($page=="dict5")
 		||($page=="intro")
 		||($page=="joint")
 		||($page=="joint1")
