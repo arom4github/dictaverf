@@ -29,7 +29,8 @@ function collect_form(){
             $w = $res;
 	} else {
 	    //$w = db_get_words($_SESSION['test_id']);
-	    $w = db_get_words_25($_SESSION['test_id']);
+	    //$w = db_get_words_25($_SESSION['test_id']);
+	    $w = db_get_words_50($_SESSION['test_id']);
 	} 
 ?>
 <script language=JavaScript> 

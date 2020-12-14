@@ -140,7 +140,7 @@ if($_SESSION['stage'] == 2){
 			// check for error
 			write_log("Saved words ".(($err == 0)? "OK":"failed ".$err));
 		}
-		if($_SESSION['times'] == 5) 
+		if($_SESSION['times'] == 3) // number of times + 1  
 			$_SESSION['stage'] = 3; //out
 		else{
 			$_SESSION['stage'] = 2; //participate up to 4 times

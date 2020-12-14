@@ -86,28 +86,27 @@
             //Si dictionnaire inverse ...
     	         }
     	        if($dict == "back"){
-    	      ?>
 
-    			<div id='abc_order' class='abc_in'>
-
-            <?php
+    		  echo "<div id='abc_order' class='abc_in'>";
+                  echo "<div style='height:50px;float:left;width:50%;vertical-align:middle;'>";
+    		  //echo "<div id='abc_order' class='abc_in'>";
       		  $abc = "?1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            $length_abc = strlen($abc);
-                for($i=0; $i<$length_abc; $i++){
-                      echo "<span  class=\"abc_link\" onclick=\"chDict('".$abc[$i]."');erase_stimulus();\">".$abc[$i]."</span>";
-                }
+		  $length_abc = strlen($abc);
+		  for($i=0; $i<$length_abc; $i++){
+                      echo "<span  style=\"line-height:50px;vertical-align:middle;\" class=\"abc_link\" onclick=\"chDict('".$abc[$i]."');erase_stimulus();\">".$abc[$i]."</span>";
+                  }
+      		  echo "</div>";
       		  ?>
-      		</div>
 
-          <div id='word_order' class='abc_in'>
-            <div class="ui input" style='height:50px;display:inline-block;width:50%;vertical-align:middle;padding-left:auto;padding-top:4px;'>
+                <div class="ui input" style='height:50px;display:inline-block;float:right;width:50%;vertical-align:middle;padding-left:auto;padding-top:4px;'>
     			    <div style="display:inline-block;margin-right:10px;"><?php echo $locale['resp']; ?> : </div><input style="height:38px;margin-right:10px;" type="text" name="stimul" value="" placeholder="Search response ..."/>
-              <input class="ui black button" type="button" value="<?php echo $locale['searching']; ?>" onclick="search_word();"><br>
-            </div>
-    			</div>
+			<input class="ui black button" type="button" value="<?php echo $locale['searching']; ?>" onclick="search_word();"><br>
+		</div>
+			</div>
 
     			<div id='stim_order' class='abc_in'>
     				Количество стимулов:
+    					<span  class="abc_link" onclick="chDict_st(1, 999999);">All</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(350, 200);">350-200</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(199, 150);">199-150</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(149, 100);">149-100</span>&nbsp;
@@ -117,6 +116,7 @@
 
     			<div id='resp_order' class='abc_in'>
     				Количество откликов:
+    					<span  class="abc_link" onclick="chDict_rs(1, 999999);">All</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_rs(3000, 2000);">3000-2000</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_rs(1999, 1500);">1999-1500</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_rs(1499, 1000);">1499-1000</span>&nbsp;
@@ -128,6 +128,8 @@
 
 
 
+              </br>
+              </br>
           <font size="6" color="#12bbad">DICTIONNAIRE INVERSE</font>
 
 
@@ -241,7 +243,6 @@
       		<li><a href="#" name="abc" class="order">В алфавитном порядку реакций</a>
       		<li><a href="#" name="stim" class="order">По количеству стимулов</a>
       		<li><a href="#" name="resp" class="order">По количеству реакций</a>
-      		<li><a href="#" name="word" class="order">По отдельному слову</a>
       	</ul>
   <?php } else { ?>
   	Choisissez ici dans quel ordre vous voulez présenter cette information:
@@ -249,7 +250,6 @@
       <li><a href="#" name="abc" class="order">Ordre alphabétique</a>
       <li><a href="#" name="stim" class="order">Nombre de stimulus</a>
       <li><a href="#" name="resp" class="order">Nombre de réponses</a>
-      <li><a href="#" name="word" class="order">Recherche spécifique</a>
   	</ul>
   <?php } ?>
 

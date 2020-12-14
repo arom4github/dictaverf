@@ -108,7 +108,7 @@ $locale = array(
 	'time_left' => 'Temps restant [sec]',
 	'again' => 'Start again',
 	'thank_you' => 'Thank you for taking part in the test',
-	'test_descr' => 'Vous allez voir apparaitre 25 mots différents. Nous vous prions de
+	'test_descr' => 'Vous allez voir apparaitre 50 mots différents. Nous vous prions de
 bien vouloir inscrire le premier mot (ou expression) qui vous vient à
 l’esprit en réaction à ce mot. Une fois le test terminé, vous pouvez le 
 recommencer – les mots seront différents à chaque fois!

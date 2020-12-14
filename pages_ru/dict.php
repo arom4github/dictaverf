@@ -80,30 +80,29 @@
               </br>
               </br>
               </br>
-            <font size="6" color="#12bbad">Прямой словарь</font>
+            <font size="6" color="#12bbad">DICTIONNAIRE DIRECT</font>
+
             <?php
             //Si dictionnaire inverse ...
     	         }
     	        if($dict == "back"){
-    	      ?>
 
-    			<div id='abc_order' class='abc_in'>
-
-            <?php
+    		  echo "<div id='abc_order' class='abc_in'>";
+                  echo "<div style='height:50px;float:left;width:50%;vertical-align:middle;'>";
+    		  //echo "<div id='abc_order' class='abc_in'>";
       		  $abc = "?1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            $length_abc = strlen($abc);
-                for($i=0; $i<$length_abc; $i++){
-                      echo "<span  class=\"abc_link\" onclick=\"chDict('".$abc[$i]."');erase_stimulus();\">".$abc[$i]."</span>";
-                }
+		  $length_abc = strlen($abc);
+		  for($i=0; $i<$length_abc; $i++){
+                      echo "<span  style=\"line-height:50px;vertical-align:middle;\" class=\"abc_link\" onclick=\"chDict('".$abc[$i]."');erase_stimulus();\">".$abc[$i]."</span>";
+                  }
+      		  echo "</div>";
       		  ?>
-      		</div>
 
-          <div id='word_order' class='abc_in'>
-            <div class="ui input" style='height:50px;display:inline-block;width:50%;vertical-align:middle;padding-left:auto;padding-top:4px;'>
+                <div class="ui input" style='height:50px;display:inline-block;float:right;width:50%;vertical-align:middle;padding-left:auto;padding-top:4px;'>
     			    <div style="display:inline-block;margin-right:10px;"><?php echo $locale['resp']; ?> : </div><input style="height:38px;margin-right:10px;" type="text" name="stimul" value="" placeholder="Search response ..."/>
-              <input class="ui black button" type="button" value="<?php echo $locale['searching']; ?>" onclick="search_word();"><br>
-            </div>
-    			</div>
+			<input class="ui black button" type="button" value="<?php echo $locale['searching']; ?>" onclick="search_word();"><br>
+		</div>
+			</div>
 
     			<div id='stim_order' class='abc_in'>
     				Количество стимулов:
@@ -126,7 +125,10 @@
     			</div>
 
 
-          <font size="6" color="#12bbad">Обратный словарь</font>
+
+              </br>
+              </br>
+          <font size="6" color="#12bbad">DICTIONNAIRE INVERSE</font>
 
 
 
@@ -143,7 +145,7 @@
 			  <span class="abc_link" onClick="getAnketa(+10);">&gt;&gt;</span>&nbsp;
 			  <span class="abc_link" onClick="getAnketa(+100);">&gt;&gt;&gt;</span>
         <span>          <br />
-                  <font size="6" color="#12bbad">Анкеты</font> </span>
+                  <font size="6" color="#12bbad">Questionnaires Individuels</font> </span>
 		  <?php
           }
           ?>
@@ -154,12 +156,13 @@
 
     </form>
 
-    <br />
-    <div class="searc_result" style="margin-top:12%;">
+
+
+    <div class="searc_result" style="margin-top:12%; margin-left: auto;
+    margin-right: auto;" >
         <fieldset class="fs">
             <legend class="search_result"><?php echo $locale['s_result']; ?></legend>
             <div id="results">
-
             </div>
         </fieldset>
     </div>
@@ -167,13 +170,6 @@
 
 </div>
 </div>
-
-
-
-
-
-
-
 
 <div id='mask'></div>
 
@@ -236,13 +232,26 @@
 
 <div id='mask'></div>
 <div id="bdict_selector" class="bdict_selector">
-	Выбор порядок представления информации:
-	<ul>
-		<li><a href="#" name="abc" class="order">В алфавитном порядку реакций</a>
-		<li><a href="#" name="stim" class="order">По количеству стимулов</a>
-		<li><a href="#" name="resp" class="order">По количеству реакций</a>
-		<li><a href="#" name="word" class="order">По отдельному слову</a>
-	</ul>
+
+  <?php
+      if($lang == "ru" ){ ?>
+
+      	Выбор порядок представления информации:
+      	<ul>
+      		<li><a href="#" name="abc" class="order">В алфавитном порядку реакций</a>
+      		<li><a href="#" name="stim" class="order">По количеству стимулов</a>
+      		<li><a href="#" name="resp" class="order">По количеству реакций</a>
+      	</ul>
+  <?php } else { ?>
+  	Choisissez ici dans quel ordre vous voulez présenter cette information:
+  	<ul>
+      <li><a href="#" name="abc" class="order">Ordre alphabétique</a>
+      <li><a href="#" name="stim" class="order">Nombre de stimulus</a>
+      <li><a href="#" name="resp" class="order">Nombre de réponses</a>
+  	</ul>
+  <?php } ?>
+
+
 </div>
 
 <div id="db_selector" class="db_selector">
