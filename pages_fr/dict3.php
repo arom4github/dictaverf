@@ -111,7 +111,7 @@
     					<span  class="abc_link" onclick="chDict_st(350, 200);">350-200</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(199, 150);">199-150</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(149, 100);">149-100</span>&nbsp;
-    					<span  class="abc_link" onclick="chDict_st(90, 50);">99-50</span>&nbsp;
+    					<span  class="abc_link" onclick="chDict_st(99, 50);">99-50</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(49, 1);">49-1</span>&nbsp;
     			</div>
 

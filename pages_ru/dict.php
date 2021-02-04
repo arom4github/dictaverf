@@ -106,15 +106,17 @@
 
     			<div id='stim_order' class='abc_in'>
     				Количество стимулов:
+    					<span  class="abc_link" onclick="chDict_st(999999, 1);">All</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(350, 200);">350-200</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(199, 150);">199-150</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(149, 100);">149-100</span>&nbsp;
-    					<span  class="abc_link" onclick="chDict_st(90, 50);">99-50</span>&nbsp;
+    					<span  class="abc_link" onclick="chDict_st(99, 50);">99-50</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_st(49, 1);">49-1</span>&nbsp;
     			</div>
 
     			<div id='resp_order' class='abc_in'>
     				Количество откликов:
+    					<span  class="abc_link" onclick="chDict_rs(999999, 1);">All</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_rs(3000, 2000);">3000-2000</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_rs(1999, 1500);">1999-1500</span>&nbsp;
     					<span  class="abc_link" onclick="chDict_rs(1499, 1000);">1499-1000</span>&nbsp;
