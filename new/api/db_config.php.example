@@ -1,0 +1,15 @@
+<?php
+/**
+*\file db_config.php
+*\brief Database configuration
+*\date Summer 2021
+*/
+
+$db_host = 'localhost';
+$db_port = '5432';
+$db_user = 'admin';
+$db_pass = 'admin';
+$db_enc = 'UTF8';
+$db_name = 'database';
+
+?>

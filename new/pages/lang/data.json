@@ -1,0 +1,412 @@
+{
+	"navbar":{
+		"title":{
+			"fr":"Dictionnaires <span>a</span>ssociatifs <span>f</span>rançais",
+			"ru":"Французские <span>а</span>ссоциативные <span>С</span>ловари"
+		},
+		"about":{
+			"fr":"A propos",
+			"ru":"О проекте"
+		},
+		"authors":{
+			"fr":"Auteurs",
+			"ru":"Авторы"
+		},
+		"dictionaries":{
+			"fr":"Dictionnaires",
+			"ru":"Словари"
+		},
+		"fas":{
+			"fr":"Dictionnaire associatif du français (DAF)",
+			"ru":"Французский Ассоциативный Словарь (ФАС)"
+		},
+		"sanf":{
+			"fr":"Dictionnaire des normes associatives de la Francophonie (DINAF)",
+			"ru":"Словарь ассоциативных норм франкофонии (САНФ)"
+		},
+		"sanfn":{
+			"fr":"Dictionnaire des normes associatives de la Francophonie (normalisé) (DINAFN)",
+			"ru":"Словарь ассоциативных норм франкофонии нормализованый (САНФН)"
+		},
+		"fasn":{
+			"fr":"Dictionnaire des associations du français 2019 (DAF-2019)",
+			"ru":"Словарь французских ассоциаций 2019 (ФАСН-2019)"
+		},
+		"fas1_red":{
+			"fr":"Dictionnaire des associations françaises 2012+2019 (DAF1-abrégé)",
+			"ru":"Словарь французских ассоциаций 2012+2019 (ФАС1-сокращенный)"
+		},
+		"fas2_red":{
+			"fr":"Dictionnaire des associations françaises 2012+2019 (DAF2-abrégé)",
+			"ru":"Словарь французских ассоциаций 2012+2019 (ФАС2-сокращенный)"
+		},
+		"help":{
+			"fr":"Aide",
+			"ru":"Помощь"
+		}
+	},
+	"home":{
+		"intro":{
+			"fr":"Un dictionnaire associatif est une excellente source qui révèle le monde intérieur, les problèmes et les aspirations de tout un peuple ou d'un sous-ensemble de celui-ci.",
+			"ru":"Ассоциативный словарь - это прекрасный источник, раскрывающий внутренний мир, проблемы и чаяния целого народа или его подгруппы."
+		},
+		"fb":{
+			"fr":"Partager sur Facebook",
+			"ru":"Поделиться на Facebook"
+		},
+		"vk":{
+			"fr":"Partager sur VK",
+			"ru":"Поделиться в VK"
+		},
+		"linkedin":{
+			"fr":"Partager sur Linkedin",
+			"ru":"Поделиться на Linkedin"
+		}
+	},
+	"about":{
+		"fas":{
+			"link":"about_fas.html"
+		},
+		"sanf":{
+			"link":"about_sanf.html"
+		},
+		"sanfn":{
+			"link":"about_sanfn.html"
+		},
+		"fasn":{
+			"link":"about_fasn.html"
+		},
+		"fas1_red":{
+			"link":"about_fas1_red.html"
+		},
+		"fas2_red":{
+			"link":"about_fas2_red.html"
+		}
+	},
+	"authors":{
+		"authors1":{
+			"name":{
+				"fr":"Debrenn Michèle",
+				"ru":"Дебренн Мишель"
+			},
+			"description":{
+				"fr":"Docteur en lettres, professeur au département de français Faculté de langues étrangères Université d’Etat de Novossibirsk",
+				"ru":"Руковолитель<br>д.ф.н., профессор кафедры французского языка факультета иностранных языков НГУ"
+			}
+		},
+		"authors2":{
+			"name":{
+				"fr":"Natalia Ufimtseva",
+				"ru":"Уфимцева Наталья Владимировна"
+			},
+			"description":{
+				"fr":"Docteur en lettres, professeur à l’Institut de Linguistique Moscou",
+				"ru":"д.ф.н., профессор Института Языкознания РАН"
+			}
+		},
+		"authors3":{
+			"name":{
+				"fr":"Alexey A. Romanenko",
+				"ru":"Романенко Алексей Анатольевич"
+			},
+			"description":{
+				"fr":"Auteur/propriétaire du logiciel. Docteur en support technique, chef de la division informatique de FIT NSU",
+				"ru":"Автор системы. Техническое сопровождение<br>к.т.н., зав. отделом компьютерной техники ФИТ НГУ"
+			}
+		}
+	},
+	"dict":{
+		"fas":{
+			"fr":"DAF",
+			"ru":"ФАС"
+		},
+		"sanf":{
+			"fr":"DINAF",
+			"ru":"САНФ"
+		},
+		"sanfn":{
+			"fr":"DINAFN",
+			"ru":"САНФН"
+		},
+		"fasn":{
+			"fr":"DAF-2019",
+			"ru":"ФАСН-2019"
+		},
+		"fas1_red":{
+			"fr":"DAF1-abrégé",
+			"ru":"ФАС1-сокращенный"
+		},
+		"fas2_red":{
+			"fr":"DAF2-abrégé",
+			"ru":"ФАС2-сокращенный"
+		},
+		"about_title":{
+			"fr":"A propos",
+			"ru":"О словаре"
+		},
+		"stim_title":{
+			"fr":"Stimuli",
+			"ru":"Стимулы"
+		},
+		"search_direct":{
+			"title":{
+				"fr":"Dictionnaire direct",
+				"ru":"Прямой словарь"
+			},
+			"description":{
+				"fr":"Cette méthode est utilisée pour rechercher une réponse à un stimulus.",
+				"ru":"Этот метод используется для поиска реакции на стимул."
+			}
+		},
+		"search_invert":{
+			"title":{
+				"fr":"Dictionnaire inversé",
+				"ru":"Обратный словарь"
+			},
+			"description":{
+				"fr":"Cette méthode vous permet de trouver des stimuli par réponse.",
+				"ru":"Этот метод позволяет находить стимулы по реакции."
+			}
+		},
+		"search_questionnaire":{
+			"title":{
+				"fr":"Questionnaires",
+				"ru":"Анкеты"
+			},
+			"description":{
+				"fr":"Cette méthode vous permet de visualiser différents questionnaires remplis par des personnes.",
+				"ru":"Этот метод позволяет просматривать различные анкеты, заполненные людьми."
+			}
+		},
+		"search_method":{
+			"letter":{
+				"fr":"Par ordre alphabétique (lettre)",
+				"ru":"В алфавитном порядке"
+			},
+			"word":{
+				"fr":"Par ordre alphabétique (mot)",
+				"ru":"По отдельному стимулу"
+			},
+			"stim":{
+				"fr":"Par le nombre de stimuli",
+				"ru":"По количеству стимулов"
+			},
+			"react":{
+				"fr":"Par le nombre de réponses",
+				"ru":"По количеству реакций"
+			},
+			"frequency":{
+				"fr":"Par fréquence absolue",
+				"ru":"По абсолютной частотности"
+			},
+			"questionnaires":{
+				"fr":"Questionnaires individuels",
+				"ru":"Индивидуальные анкеты"
+			}
+		},
+		"card":[
+			{
+				"fr":"Nombre total de participants par le site web",
+				"ru":"Общее число участников веб-сайта"
+			},{
+				"fr":"Âge moyen des participants du site web",
+				"ru":"Средний возраст участников веб-сайта"
+			},{
+				"fr":"% d'hommes/% de femmes",
+				"ru":"% Мужчина/% женщина"
+			},{
+				"fr":"Nombre de mots introduits par les auteurs",
+				"ru":"Количество слов, введенных авторами"
+			},{
+				"fr":"Nombre de mots individuels dans le dictionnaire",
+				"ru":"Количество отдельных слов в словаре"
+			}
+		]
+	},
+	"fas":{
+		"about":{
+			"link":"fas_about.html"
+		},
+		"stim":{
+			"fr":"Chaque questionnaire comportait 100 stimuli choisi par hasard parmi les 1100 suivants:",
+			"ru":"Каждая анкета в эксперименте состояла из 100 стимулов случайным образом подобранных среди 1100 следующих слов:"
+		}
+	},
+	"fas1_red":{
+		"about":{
+			"link":"fas1_red_about.html"
+		},
+		"stim":{
+			"fr":"Les participants à l’expérience ont fourni des associations aux mots suivants:",
+			"ru":"Участникам эксперимента были предоставлены следующие стимулы:"
+		}
+	},
+	"fas2_red":{
+		"about":{
+			"link":"fas2_red_about.html"
+		},
+		"stim":{
+			"fr":"Les participants à l’expérience ont fourni des associations aux mots suivants:",
+			"ru":"Участникам эксперимента были предоставлены следующие стимулы:"
+		}
+	},
+	"fasn":{
+		"about":{
+			"link":"fasn_about.html"
+		},
+		"stim":{
+			"fr":"Les participants à l’expérience ont fourni des associations aux mots suivants:",
+			"ru":"Участникам эксперимента были предоставлены следующие стимулы:"
+		}
+	},
+	"sanf":{
+		"about":{
+			"link":"sanf_about.html"
+		},
+		"stim":{
+			"fr":"Tous les questionnaires contiennent les 100 mots suivants:",
+			"ru":"Все анкеты содержали следующие 100 стимулов:"
+		}
+	},
+	"sanfn":{
+		"about":{
+			"link":"sanfn_about.html"
+		},
+		"stim":{
+			"fr":"Tous les questionnaires contiennent les 100 mots suivants:",
+			"ru":"Все анкеты содержали следующие 100 стимулов:"
+		}
+	},
+	"help":{
+		"intro":{
+			"fr":"Vous avez la possibilité de filtrer les données en cliquant sur le filtre pour les dictionnaires direct et inversé.",
+			"ru":"У вас есть возможность отфильтровать данные, нажав на фильтр для прямого и обратного словарей."
+		},
+		"fas":{
+			"link":"help_fas.html"
+		},
+		"sanf":{
+			"link":"help_sanf.html"
+		},
+		"sanfn":{
+			"link":"help_sanfn.html"
+		},
+		"fasn":{
+			"link":"help_fasn.html"
+		},
+		"fas1_red":{
+			"link":"help_fas1_red.html"
+		},
+		"fas2_red":{
+			"link":"help_fas2_red.html"
+		}
+	},
+	"search":{
+		"search":{
+			"fr":"Recherche",
+			"ru":"Поиск"
+		},
+		"all":{
+			"fr":"Tous",
+			"ru":"Все"
+		},
+		"first":{
+			"fr":"Premier",
+			"ru":"Первый"
+		},
+		"last":{
+			"fr":"Dernier",
+			"ru":"Последний"
+		}
+	},
+	"filter":{
+		"title":{
+			"fr":"Filtre",
+			"ru":"Фильтр"
+		},
+		"age":{
+			"fr":"Age",
+			"ru":"Возраст"
+		},
+		"from":{
+			"fr":"De",
+			"ru":"От"
+		},
+		"to":{
+			"fr":"à",
+			"ru":"до"
+		},
+		"region":{
+			"fr":"Région",
+			"ru":"Регион"
+		},
+		"city":{
+			"fr":"Ville",
+			"ru":"Город"
+		},
+		"specialization":{
+			"fr":"Domaine de spécialisation",
+			"ru":"Область специализации"
+		},
+		"sex":{
+			"title":{
+				"fr":"Sexe",
+				"ru":"Секс"
+			},
+			"man":{
+				"fr":"Homme",
+				"ru":"Мужчина"
+			},
+			"woman":{
+				"fr":"Femme",
+				"ru":"Женщина"
+			}
+		},
+		"language":{
+			"fr":"Langue maternelle",
+			"ru":"Родной язык"
+		},
+		"education":{			
+			"title":{
+				"fr":"Formation",
+				"ru":"Обучение"
+			},			
+			"highSchool":{
+				"fr":"Lycéen",
+				"ru":"Учащийся старших классов"
+			},			
+			"student":{
+				"fr":"Étudiant",
+				"ru":"Студент"
+			},			
+			"PhD":{
+				"fr":"Doctorant",
+				"ru":"Докторант"
+			},			
+			"sciencePhD":{
+				"fr":"Docteur en sciences",
+				"ru":"Доктор наук"
+			},			
+			"researchDirector":{
+				"fr":"HDR",
+				"ru":"АPИ"
+			}
+		},
+		"noImportant":{
+			"fr":"Sans importance",
+			"ru":"Не важно"
+		}
+	},
+	"path":{
+		"home":{
+			"fr":"ACCUEIL",
+			"ru":"ГЛАВНАЯ"
+		}
+	},
+	"pages":{
+		"title":{
+			"fr":"Dictionnaires associatifs français",
+			"ru":"Французский Ассоциативный Словарь"
+		}
+	}
+}
