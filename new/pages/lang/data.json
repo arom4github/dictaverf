@@ -17,28 +17,24 @@
 			"ru":"Словари"
 		},
 		"fas":{
-			"fr":"Dictionnaire associatif du français (DAF)",
-			"ru":"Французский Ассоциативный Словарь (ФАС)"
+			"fr":"Dictionnaire des associations évoquées par les mots pour le français 2010  (DAF-1)",
+			"ru":"Французский Ассоциативный Словарь 2010 (ФАС-1)"
 		},
-		"sanf":{
-			"fr":"Dictionnaire des normes associatives de la Francophonie (DINAF)",
-			"ru":"Словарь ассоциативных норм франкофонии (САНФ)"
+		"fas2":{
+			"fr":"Nouveau dictionnaire des associations évoquées par les mots pour le français 2020 (DAF-2)",
+			"ru":"Словарь французских ассоциаций 2019 (ФАС-2)"
 		},
 		"sanfn":{
-			"fr":"Dictionnaire des normes associatives de la Francophonie (normalisé) (DINAFN)",
-			"ru":"Словарь ассоциативных норм франкофонии нормализованый (САНФН)"
-		},
-		"fasn":{
-			"fr":"Dictionnaire des associations du français 2019 (DAF-2019)",
-			"ru":"Словарь французских ассоциаций 2019 (ФАСН-2019)"
+			"fr":"Dictionnaire des normes associatives de la Francophonie",
+			"ru":"Словарь ассоциативных норм французского языка"
 		},
 		"fas1_red":{
-			"fr":"Dictionnaire des associations françaises 2012+2019 (DAF1-abrégé)",
-			"ru":"Словарь французских ассоциаций 2012+2019 (ФАС1-сокращенный)"
+			"fr":"Dictionnaire réduit des associations évoquées par les mots pour le français 2010 (DAF-1r)",
+			"ru":"Сокращенный французский ассоциативный словарь 2010 (ФАС-1с)"
 		},
 		"fas2_red":{
-			"fr":"Dictionnaire des associations françaises 2012+2019 (DAF2-abrégé)",
-			"ru":"Словарь французских ассоциаций 2012+2019 (ФАС2-сокращенный)"
+			"fr":"Nouveau dictionnaire réduit des associations évoquées par les mots pour le français 2020 (DAF-2r)",
+			"ru":"Сокращенный новый французский ассоциативный словарь 2019 (ФАС-2с)"
 		},
 		"help":{
 			"fr":"Aide",
@@ -67,14 +63,11 @@
 		"fas":{
 			"link":"about_fas.html"
 		},
-		"sanf":{
-			"link":"about_sanf.html"
-		},
 		"sanfn":{
 			"link":"about_sanfn.html"
 		},
-		"fasn":{
-			"link":"about_fasn.html"
+		"fas2":{
+			"link":"about_fas2.html"
 		},
 		"fas1_red":{
 			"link":"about_fas1_red.html"
@@ -117,28 +110,24 @@
 	},
 	"dict":{
 		"fas":{
-			"fr":"DAF",
-			"ru":"ФАС"
-		},
-		"sanf":{
-			"fr":"DINAF",
-			"ru":"САНФ"
+			"fr":"DAF-1",
+			"ru":"ФАС-1"
 		},
 		"sanfn":{
-			"fr":"DINAFN",
-			"ru":"САНФН"
+			"fr":"DNAF",
+			"ru":"САНФЯ"
 		},
-		"fasn":{
-			"fr":"DAF-2019",
-			"ru":"ФАСН-2019"
+		"fas2":{
+			"fr":"DAF-2",
+			"ru":"ФАС-2"
 		},
 		"fas1_red":{
-			"fr":"DAF1-abrégé",
-			"ru":"ФАС1-сокращенный"
+			"fr":"DAF-1r",
+			"ru":"ФАС-1с"
 		},
 		"fas2_red":{
-			"fr":"DAF2-abrégé",
-			"ru":"ФАС2-сокращенный"
+			"fr":"DAF-2r",
+			"ru":"ФАС-2с"
 		},
 		"about_title":{
 			"fr":"A propos",
@@ -250,22 +239,13 @@
 			"ru":"Участникам эксперимента были предоставлены следующие стимулы:"
 		}
 	},
-	"fasn":{
+	"fas2":{
 		"about":{
-			"link":"fasn_about.html"
+			"link":"fas2_about.html"
 		},
 		"stim":{
 			"fr":"Les participants à l’expérience ont fourni des associations aux mots suivants:",
 			"ru":"Участникам эксперимента были предоставлены следующие стимулы:"
-		}
-	},
-	"sanf":{
-		"about":{
-			"link":"sanf_about.html"
-		},
-		"stim":{
-			"fr":"Tous les questionnaires contiennent les 100 mots suivants:",
-			"ru":"Все анкеты содержали следующие 100 стимулов:"
 		}
 	},
 	"sanfn":{
@@ -389,7 +369,7 @@
 			},			
 			"researchDirector":{
 				"fr":"HDR",
-				"ru":"АPИ"
+				"ru":"HDR"
 			}
 		},
 		"noImportant":{

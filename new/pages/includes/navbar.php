@@ -22,9 +22,8 @@
 			<li><a class="drop"><?php echo $lang->navbar->dictionaries->{$_SESSION["lang"]}; ?></a>
 				<ul>
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fas.php"'; ?>><?php echo $lang->navbar->fas->{$_SESSION["lang"]}; ?></a></li>
-					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_sanf.php"'; ?>><?php echo $lang->navbar->sanf->{$_SESSION["lang"]}; ?></a></li>
+					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fas2.php"'; ?>><?php echo $lang->navbar->fas2->{$_SESSION["lang"]}; ?></a></li>
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_sanfn.php"'; ?>><?php echo $lang->navbar->sanfn->{$_SESSION["lang"]}; ?></a></li>
-					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fasn.php"'; ?>><?php echo $lang->navbar->fasn->{$_SESSION["lang"]}; ?></a></li>
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fas1_red.php"'; ?>><?php echo $lang->navbar->fas1_red->{$_SESSION["lang"]}; ?></a></li>
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fas2_red.php"'; ?>><?php echo $lang->navbar->fas2_red->{$_SESSION["lang"]}; ?></a></li>
 				</ul>

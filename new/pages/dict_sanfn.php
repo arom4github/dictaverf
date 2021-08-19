@@ -41,10 +41,10 @@
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="content three_quarter">
-				<h1><?php echo $lang->pages->title->{$_SESSION["lang"]}; ?></h1>
+				<h1><?php echo $lang->navbar->sanfn->{$_SESSION["lang"]}; ?></h1>
 				<div id=about>
 					<h2><?php echo $lang->dict->about_title->{$_SESSION["lang"]}; ?></h2>
-					<?php include __DIR__."\lang\\".$_SESSION["lang"]."\\".$lang->sanfn->about->link; ?>
+					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->sanfn->about->link; ?>
 				</div>
 				<div id="stim">
 					<h2><?php echo $lang->dict->stim_title->{$_SESSION["lang"]}; ?></h2>
