@@ -143,24 +143,25 @@ function printResInvertFas(range,filter,method){
  * @param {string} range The letter or part of word that the word begin
  * @param {object} filter An object with every data which is complete in the filter
  */
-function printResDirectSanf(letter, filter){
+function printResDirectSanf(range,filter){
 	/* Configuration */
 	var options = {
 		"dict":$('#dictionary').val(),
 		"method":"letter",
+		range,
 		filter
 	};
 
+	/* Ajax request */
 	var jqxhr = $.post("../../api/direct_search.php", options)
 		.done(function(response){
 			var data = response.data;
 			show_loader(false);
 			switch (response.status) {
 				case 200:
-					$('<div><table><thead><tr><th colspan="5" class="text-center">Legend</th></tr></thead><tbody class="res-legend"><tr><td class="differents-countries canada">Canada</td><td class="differents-countries suisse">Suisse</td><td class="differents-countries suisse-canada">Suisse, Canada</td><td class="differents-countries belgique">Belgique</td><td class="differents-countries belgique-canada">Belgique, Canada</td></tr><tr><td class="belgique-suisse">Belgique, Suisse</td><td class="belgique-suisse-canada">Belgique, Suisse, Canada</td><td class="france">France</td><td class="france-canada">France, Canada</td><td class="france-suisse">France, Suisse</td></tr><tr><td class="france-suisse-canada">France, Suisse, Canada</td><td class="france-belgique">France, Belgique</td><td class="france-belgique-canada">France, Belgique, Canada</td><td class="france-belgique-suisse">France, Belgique, Suisse</td><td class="france-belgique-suisse-canada">All</td></tr></tbody></table></div>').appendTo('.result');
-					$('<div class="result-table"><table><thead><tr><th>#</th><th>Stimulus</th><th class="differents-countries">Joint</th><th class="differents-countries">France</th><th class="differents-countries">Belgique</th><th class="differents-countries">Suisse</th><th class="differents-countries">Canada</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+					$('<div class="result-table"><table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
 					for (let index = 0; index < data.length; index++) {
-						$('<tr><td>'+data[index].id+'</td><td>'+data[index].stimulus+'<button>Courbe</button></td><td>'+data[index].joint+'</td><td>'+data[index].france+'</td><td>'+data[index].belgique+'</td><td>'+data[index].suisse+'</td><td>'+data[index].canada+'</td></tr>').appendTo(".result-table table tbody");
+						$('<tr><td>'+data[index].id+'</td><td>'+data[index].stimulus+'</td><td>'+data[index].reactions+'</td></tr>').appendTo(".result-table table tbody");
 					}
 					break;
 				case 400:
@@ -178,6 +179,7 @@ function printResDirectSanf(letter, filter){
 			console.log(error);
 		});
 }
+
 
 /**
  * Organize function's call thanks to url params
@@ -211,11 +213,9 @@ function printRes(range){
 	if(url.searchParams.get("method")=="inv"){
 		/* Invert dictionary */
 		switch ($('#dictionary').val()) {
-			case "fasn":
+			case "fas2":
 			case "fas1_red":
 			case "fas2_red":
-			case "sanf":
-			case "sanfn":
 			case "fas":
 				switch (url.searchParams.get("num")) {
 					case "3":
@@ -229,26 +229,25 @@ function printRes(range){
 						break;
 				}
 				break;
+			case "sanfn":
+				break;
 			default:
-				printResInvertFas(range,filter,"defaultLetter");
+				//printResInvertFas(range,filter,"defaultLetter");
 				break;
 			}
 	}else{
 		/* Direct dictionary */
 		switch ($('#dictionary').val()) {
 			case "fas":
-			case "fasn":
+			case "fas2":
 			case "fas1_red":
 			case "fas2_red":
 				printResDirectFas(range,filter,false);
 				break;
-			case "sanf":
 			case "sanfn":
 				printResDirectSanf(range,filter);
 				break;
-			default:
-				printResDirectFas(range,filter,true);
-				break;
+
 		}
 	}
 }

@@ -14,61 +14,41 @@
 					if(isset($_GET["method"]) && isset($_GET["num"])){
 						switch ($_GET["method"]) {
 							case 'inv':
-								?> 
-								<li><a><?php echo $lang->dict->search_invert->title->{$_SESSION["lang"]}; ?></a></li>
-								<?php
+								echo '<li><a>'. $lang->dict->search_invert->title->{$_SESSION["lang"]}.'</a></li>';
 								switch ($_GET["num"]) {
 									case '1':
-										?>
-										<li><a><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->word->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									case '2':
-										?>
-										<li><a><?php echo $lang->dict->search_method->stim->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->stim->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									case '3':
-										?>
-										<li><a><?php echo $lang->dict->search_method->react->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->react->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									default:
-										?>
-										<li><a><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->letter->{$_SESSION["lang"]}.'</a></li>';
 										break;
 								}
 								break;
 							case 'que':
-								?>
-								<li><a><?php echo $lang->dict->search_questionnaire->title->{$_SESSION["lang"]}; ?></a></li>
-								<li><a><?php echo $lang->dict->search_method->questionnaires->{$_SESSION["lang"]}; ?></a></li>
-								<?php
+								echo '<li><a>'.$lang->dict->search_questionnaire->title->{$_SESSION["lang"]}.'</a></li>';
+								echo '<li><a>'.$lang->dict->search_method->questionnaires->{$_SESSION["lang"]}.'</a></li>';
 								break;
 							default:
-								?> 
-								<li><a><?php echo $lang->dict->search_direct->title->{$_SESSION["lang"]}; ?></a></li>
-								<?php
+								echo '<li><a>'.$lang->dict->search_direct->title->{$_SESSION["lang"]}.'</a></li>';
 								switch ($_GET["num"]) {
 									case '1':
-										?>
-										<li><a><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->word->{$_SESSION["lang"]}.'</a></li>';							
 										break;
 									default:
-										?>
-										<li><a><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->letter->{$_SESSION["lang"]}.'</a></li>';
 										break;
 								}
 								break;
 						}
 					}else{
-					?>
-						<li><a><?php echo $lang->dict->search_direct->title->{$_SESSION["lang"]}; ?></a></li>
-						<li><a><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>
-					<?php
+						echo '<li><a>'. $lang->dict->search_direct->title->{$_SESSION["lang"]}.'</a></li>';
+						echo '<li><a>'.$lang->dict->search_method->letter->{$_SESSION["lang"]}.'</a></li>';
 					}
 				?>
 			</ul>
@@ -107,7 +87,7 @@
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="content three_quarter">
-				<h1><?php echo $lang->pages->title->{$_SESSION["lang"]}; ?></h1>
+				<h1><?php echo $lang->navbar->fas1_red->{$_SESSION["lang"]}; ?></h1>
 				<div id="result">
 					<h2><?php echo $lang->search->search->{$_SESSION["lang"]}; ?></h2>
 					<!-- Filter -->

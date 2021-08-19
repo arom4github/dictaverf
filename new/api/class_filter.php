@@ -122,7 +122,7 @@ class Filter {
 		if(!isset($_POST["dict"])){
 			array_push($this->error_msg,"The request must contain a 'dict' variable.");
 			return false;
-		}elseif (!in_array($_POST["dict"],array("fas","fasn","sanf","sanfn","fas1_red","fas2_red"))) {
+		}elseif (!in_array($_POST["dict"],array("fas","fas2","sanfn","fas1_red","fas2_red"))) {
 			array_push($this->error_msg,"The specified dictionary doesn't exist.");
 			return false;
 		}

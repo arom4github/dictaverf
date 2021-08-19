@@ -8,61 +8,47 @@
 		<div id="breadcrumb" class="hoc clear">
 			<ul>
 				<li><a href="../../index.php"><?php echo $lang->path->home->{$_SESSION["lang"]}; ?></a></li>
-				<li><a href="../dict_sanf.php"><?php echo $lang->dict->sanf->{$_SESSION["lang"]}; ?></a></li>
+				<li><a href="../dict_fas2.php"><?php echo $lang->dict->fas2->{$_SESSION["lang"]}; ?></a></li>
 				<?php
 					/* Path depending of the search method used */
 					if(isset($_GET["method"]) && isset($_GET["num"])){
 						switch ($_GET["method"]) {
 							case 'inv':
-								?> 
-								<li><a><?php echo $lang->dict->search_invert->title->{$_SESSION["lang"]}; ?></a></li>
-								<?php
+								echo '<li><a>'. $lang->dict->search_invert->title->{$_SESSION["lang"]}.'</a></li>';
 								switch ($_GET["num"]) {
 									case '1':
-										?>
-										<li><a><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->word->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									case '2':
-										?>
-										<li><a><?php echo $lang->dict->search_method->stim->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->stim->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									case '3':
-										?>
-										<li><a><?php echo $lang->dict->search_method->react->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->react->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									default:
-										?>
-										<li><a><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->letter->{$_SESSION["lang"]}.'</a></li>';
 										break;
 								}
 								break;
+							case 'que':
+								echo '<li><a>'.$lang->dict->search_questionnaire->title->{$_SESSION["lang"]}.'</a></li>';
+								echo '<li><a>'.$lang->dict->search_method->questionnaires->{$_SESSION["lang"]}.'</a></li>';
+								break;
 							default:
-								?> 
-								<li><a><?php echo $lang->dict->search_direct->title->{$_SESSION["lang"]}; ?></a></li>
-								<?php
+								echo '<li><a>'.$lang->dict->search_direct->title->{$_SESSION["lang"]}.'</a></li>';
 								switch ($_GET["num"]) {
 									case '1':
-										?>
-										<li><a><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->word->{$_SESSION["lang"]}.'</a></li>';							
 										break;
 									default:
-										?>
-										<li><a><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>							
-										<?php
+										echo '<li><a>'.$lang->dict->search_method->letter->{$_SESSION["lang"]}.'</a></li>';
 										break;
 								}
 								break;
 						}
 					}else{
-					?>
-						<li><a><?php echo $lang->dict->search_direct->title->{$_SESSION["lang"]}; ?></a></li>
-						<li><a><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>
-					<?php
+						echo '<li><a>'. $lang->dict->search_direct->title->{$_SESSION["lang"]}.'</a></li>';
+						echo '<li><a>'.$lang->dict->search_method->letter->{$_SESSION["lang"]}.'</a></li>';
 					}
 				?>
 			</ul>
@@ -75,8 +61,8 @@
 			<div class="sidebar one_quarter first">
 				<nav class="sdb_holder">
 					<ul>
-						<li><a href="../dict_sanf.php#about"><?php echo $lang->dict->about_title->{$_SESSION["lang"]}; ?></a></li>
-						<li><a href="../dict_sanf.php#stim"><?php echo $lang->dict->stim_title->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="../dict_fasn.php#about"><?php echo $lang->dict->about_title->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="../dict_fasn.php#stim"><?php echo $lang->dict->stim_title->{$_SESSION["lang"]}; ?></a></li>
 						<li><a class="sdb_section"><?php echo $lang->dict->search_direct->title->{$_SESSION["lang"]}; ?></a>
 							<ul>
 								<li><a href="?method=dir&num=0"><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>
@@ -88,7 +74,12 @@
 								<li><a href="?method=inv&num=0"><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>
 								<li><a href="?method=inv&num=1"><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>
 								<li><a href="?method=inv&num=2"><?php echo $lang->dict->search_method->stim->{$_SESSION["lang"]}; ?></a></li>
-								<li><a href="?method=inv&num=3"><?php echo $lang->dict->search_method->frequency->{$_SESSION["lang"]}; ?></a></li>
+								<li><a href="?method=inv&num=3"><?php echo $lang->dict->search_method->react->{$_SESSION["lang"]}; ?></a></li>
+							</ul>
+						</li>
+						<li><a class="sdb_section"><?php echo $lang->dict->search_questionnaire->title->{$_SESSION["lang"]}; ?></a>
+							<ul>
+								<li><a href="?method=que&num=0"><?php echo $lang->dict->search_method->questionnaires->{$_SESSION["lang"]}; ?></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -96,7 +87,7 @@
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="content three_quarter">
-				<h1><?php echo $lang->pages->title->{$_SESSION["lang"]}; ?></h1>
+				<h1><?php echo $lang->navbar->fas2->{$_SESSION["lang"]}; ?></h1>
 				<div id="result">
 					<h2><?php echo $lang->search->search->{$_SESSION["lang"]}; ?></h2>
 					<!-- Filter -->
@@ -122,7 +113,7 @@
 												<button class="btn-search"
 												onclick="printRes(document.getElementById('input_searchDirect').value)"><?php echo $lang->search->search->{$_SESSION["lang"]}; ?></button>
 											</div>
-											<?php
+											<?php 
 											break;
 										case '2':
 											?>
@@ -140,14 +131,16 @@
 											break;
 										case '3':
 											?>
-											<div id="freq_search">
+											<div id="reaction_search">
 												<div class="letter_container">
-													
-													<span onclick="printByFreq(80);">100%-80%</span>
-													<span onclick="printByFreq(60);">80%-60%</span>
-													<span onclick="printByFreq(40);">60%-40%</span>
-													<span onclick="printByFreq(20);">40%-20%</span>
-													<span onclick="printByFreq(0);">20%-0%</span>
+													<span onclick="printByReact();"><?php echo $lang->search->all->{$_SESSION["lang"]}; ?></span>
+													<span onclick="printByReact();">3000-2000</span>
+													<span onclick="printByReact();">1999-1500</span>
+													<span onclick="printByReact();">1499-1000</span>
+													<span onclick="printByReact();">999-750</span>
+													<span onclick="printByReact();">749-500</span>
+													<span onclick="printByReact();">499-250</span>
+													<span onclick="printByReact();">249-1</span>
 												</div>
 											</div>
 											<?php
@@ -161,6 +154,21 @@
 											<?php											
 											break;
 									}
+									break;
+								case 'que':
+									?>
+									<div class="search_nav">
+										<div onclick="printQuestionnaire('first')"><span><?php echo $lang->search->first->{$_SESSION["lang"]}; ?></span></div>
+										<div onclick="printQuestionnaire('less10')"><span><i class="fas fa-angle-double-left"></i></span></div>
+										<div onclick="printQuestionnaire('less')"><span><i class="fas fa-angle-left"></i></span></div>
+										<div>1/12800</div>
+										<div onclick="printQuestionnaire('add')"><span><i class="fas fa-angle-right"></i></span></div>
+										<div onclick="printQuestionnaire('add10')"><span><i class="fas fa-angle-double-right"></i></span></div>
+										<div onclick="printQuestionnaire('last')"><span><?php echo $lang->search->last->{$_SESSION["lang"]}; ?></span></div>
+										<input type="hidden" id="quest-number-current" value="1">
+										<input type="hidden" id="quest-number-max" value="1">
+									</div>
+									<?php
 									break;
 								default:
 									switch ($_GET["num"]) {
@@ -202,7 +210,7 @@
 					?>
 					<div id="res_loader">CHARGEMENT...</div>
 					<div class="result"></div>
-					<input type="hidden" id="dictionary" value="sanf">
+					<input type="hidden" id="dictionary" value="fas2">
 				</div>
 			</div>
 			<!-- / main body -->
@@ -221,6 +229,8 @@
 				echo "letterGen();";
 			}elseif($_GET["method"]=="inv" && !in_array($_GET["num"],array('1','2','3'))){
 				echo "letterExtendGen();";
+			}elseif($_GET["method"]=="que"){
+				echo "initQuestionnaires();";
 			}
 		}else{
 			echo "letterGen();";

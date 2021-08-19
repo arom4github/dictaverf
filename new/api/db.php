@@ -26,12 +26,13 @@ function connect(){
 *\fn function db_right_dict($chr)
 *\brief Get data about direct search on a dictionary (currently FAS)
 *\param $chr Letter or part of word that results words must begin
+*\param $test Test ID in the database
 *\return Array with that for each word :
 *\return 	Index 1 : The word
 *\return 	Index 2 : The total number of responses obtained for this stimulus
 *\return 	Index 3 : The string to display on the website
 */
-function db_right_dict($chr){
+function db_right_dict($test, $chr){
 	$res = Array();
 	$conn = connect();
 	if($conn){
@@ -74,7 +75,7 @@ function db_right_dict($chr){
 		$result = $conn -> prepare("SELECT resp.word AS rw, dict.word, count(resp.word) AS cnt 
 										FROM resp INNER JOIN dict ON dict.id=resp.id_w  
 										INNER JOIN users_jsonb ON users_jsonb.id=resp.id_u 
-										WHERE dict.test=12 {$search}
+										WHERE dict.test={$test} {$search}
 										GROUP BY dict.word, rw
 										order by dict.word, cnt desc, rw;");
 		$result -> execute();
@@ -140,6 +141,8 @@ function db_right_dict($chr){
 			}
 		}
 		$str .= " {$num}";
+		$str = preg_replace("/^, /", "", $str);
+		$str = preg_replace("/; , /", "; ", $str);
 		if($word != "") array_push($res, Array($word, "{$cnt[0]}", "{$str}<br>({$cnt[0]}, {$cnt[1]}, {$cnt[3]}, {$cnt[2]})"));
 		usort($res, "numberCompare");
 		return $res;
@@ -150,8 +153,9 @@ function db_right_dict($chr){
 }
 
 /**
-*\fn function db_back_dict($methodParam,$filter)
+*\fn function db_back_dict($test,$methodParam,$filter)
 *\brief Get data about invert search on a dictionary (currently FAS)
+*\param $test Table ID for the database
 *\param $methodParam Letter, part of word or range according to the method, that results words must begin
 *\param $filter Filter options (actually used there for get method)
 *\return Array with that for each word :
@@ -161,7 +165,7 @@ function db_right_dict($chr){
 *\return 	Index 4 : Word counter (unused here)
 *\return 	Index 5 : The number of stimuli that triggered it.
 */
-function db_back_dict($methodParam,$filter){
+function db_back_dict($test, $methodParam,$filter){
 	$res = Array();
 	$conn = connect();
 	if ($conn) {
@@ -202,8 +206,8 @@ function db_back_dict($methodParam,$filter){
 		}
 		$result = $conn -> prepare("SELECT dict.word, resp.word_inv AS rw, count(dict.word) AS cnt, resp.checked AS ch 
 			FROM resp INNER JOIN dict ON dict.id = resp.id_w WHERE resp.id_u in (SELECT 
-			users_jsonb.id FROM users_jsonb WHERE users_jsonb.id_t = 12) 
-			AND resp.word_inv <> '-' $search_char GROUP BY rw, dict.word, ch ORDER BY rw, 
+			users_jsonb.id FROM users_jsonb WHERE users_jsonb.id_t = {$test}) 
+			AND resp.word_inv <> '-' {$search_char} GROUP BY rw, dict.word, ch ORDER BY rw, 
 			cnt desc, dict.word;");
 		$result -> execute();
 		if (!$result) {
