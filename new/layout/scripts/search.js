@@ -279,29 +279,76 @@ function initQuestionnaires(){
 	$('.result').empty();
 	show_loader(true);
 	/* Var initializing */
-	let max = 2;
-	let sex = "female";
-	let firstQuest = {
-		sex: sex=="female"?"../../images/female.png":"../../images/male.png",
-		age: 18,
-		from: "Orléans",
-		language: "Français",
-		specialization:"Informatique et sciences",
-		formation: 2,
-		response:[
-			{id:1,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:2,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:3,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:4,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:5,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:6,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:7,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:8,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:9,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:10,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:11,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:12,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:13,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:14,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:15,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:16,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:17,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:18,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:19,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:20,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:21,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:22,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:23,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:24,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:25,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:26,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:27,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:28,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:29,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:30,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:31,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:32,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:33,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:34,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:35,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:36,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:37,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:38,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:39,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:40,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:41,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:42,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:43,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:44,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:45,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:46,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:47,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:48,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:49,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:50,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:51,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:52,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:53,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:54,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:55,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:56,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:57,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:58,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:59,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:60,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:61,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:62,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:63,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:64,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:65,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:66,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:67,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:68,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:69,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:70,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:71,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:72,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:73,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:74,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:75,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:76,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:77,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:78,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:79,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:80,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:81,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:82,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:83,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:84,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:85,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:86,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:87,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:88,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:89,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:90,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:91,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:92,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:93,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:94,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:95,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:96,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:97,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:98,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:99,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:100,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"}
-		]
-	};
+	let max = 1;
+
 	$('#quest-number-max').val(max);
 	$('.search_nav')[0].children[3].innerText = "1/"+ max;
 
-	/* Element creation */
-	show_loader(false);
-	$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+firstQuest.sex+'" alt="sexe"><div>Age : '+firstQuest.age+' years old</div><div>From : '+firstQuest.from+'</div></div><div class="line"><div>Language : '+firstQuest.language+'</div><div>Field of specialization : '+firstQuest.specialization+'</div><div>Formation : '+firstQuest.formation+'</div> </div></div></div>').appendTo(".result");
-	$('<table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody>').appendTo(".result .result-indiv-quest");
-	firstQuest.response.forEach(element => {
-		$("<tr><td>"+element.id+"</td><td>"+element.stimulus+"</td><td>"+element.reaction+"</td><td>"+element.frequence+"</td></tr>").appendTo(".result .result-indiv-quest table tbody");
-	});
+	var options = {
+		"dict":$('#dictionary').val(),
+		"method":"range"
+	};
+
+	/* Ajax request */
+	var jqxhr = $.post("../../api/anketa_search.php", options)
+		.done(function(response){
+			var data = response.data;
+			switch (response.status) {
+				case 200:
+					max = data[0].value;
+					$('#quest-number-max').val(max);
+					$('.search_nav')[0].children[3].innerText = "1/"+ max;
+					break;
+				case 400:
+					response.error.forEach(error =>{
+						$('<div>'+error+'<br/></div>').appendTo(".result");
+					});
+					break;
+				default:
+					break;
+			}		
+		})
+		.fail(function(error){
+			show_loader(false);
+			$('<div>The program has encountered an error.</div>').appendTo(".result");
+			console.log(error);
+		});
+
+	options = {
+		"dict":$('#dictionary').val(),
+		"method":"que",
+		"offset":0
+	};
+
+	/* Ajax request */
+	var jqxhr = $.post("../../api/anketa_search.php", options)
+		.done(function(response){
+			var data = response.data;
+			show_loader(false);
+			switch (response.status) {
+				case 200:
+					let sex = data[0].sex?"../../images/male.png":"../../images/female.png";
+					$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+sex+'" alt="sexe"><div>Age : '+data[0].age+' years old</div><div>From : '+data[0].from+'</div></div><div class="line"><div>Language : '+data[0].language+'</div><div>Field of specialization : '+data[0].specialization+'</div><div>Formation : '+data[0].formation+'</div></div> <table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+					for (var index in data) {
+						if(index == 0) continue;
+						$("<tr><td>"+data[index]['id']+"</td><td>"+data[index]['stimulus']+"</td><td>"+data[index]['reaction']+"</td><td>"+data[index]['frequency']+"</td></tr>").appendTo(".result .result-indiv-quest table tbody");
+					}
+					break;
+				case 400:
+					response.error.forEach(error =>{
+						$('<div>'+error+'<br/></div>').appendTo(".result");
+					});
+					break;
+				default:
+					break;
+			}		
+		})
+		.fail(function(error){
+			show_loader(false);
+			$('<div>The program has encountered an error.</div>').appendTo(".result");
+			console.log(error);
+		});
+
 }
 
 /**
@@ -309,7 +356,7 @@ function initQuestionnaires(){
  * @param {string} diff The number of the questionnaire compared to the current one
  */
 function printQuestionnaire(diff){
-	$('.result .result-indiv-quest').empty();
+	$('.result').empty();
 	show_loader(true);
 	/* Define the new value */
 	let actualValue = parseInt(document.getElementById("quest-number-current").value);
@@ -339,30 +386,46 @@ function printQuestionnaire(diff){
 			break;
 	}
 	/* Don't be out */
-	if(newValue < 1 ||newValue>maxValue){console.error("Out of range !");return;}
+	if(newValue<1) newValue = 1;
+	if(newValue>maxValue) newValue = maxValue;
+	
 	$('.search_nav')[0].children[3].innerText = newValue+"/"+ maxValue;
 	$('#quest-number-current').val(newValue);
-
-	/* Data recuperation */
-	var data ={
-		sex: "male"=="female"?"../../images/female.png":"../../images/male.png",
-		age: 22,
-		from: "Paris",
-		language: "Français",
-		specialization:"Informatique et sciences",
-		formation: 3,
-		response:[
-			{id:1,stimulus:"crainte2",reaction:"peur2",frequence:"424 (84.80%)"},{id:2,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:3,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:4,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:5,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:6,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:7,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:8,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:9,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:10,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:11,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:12,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:13,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:14,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:15,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:16,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:17,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:18,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:19,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:20,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:21,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:22,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:23,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:24,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:25,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:26,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:27,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:28,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:29,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:30,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:31,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:32,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:33,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:34,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:35,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:36,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:37,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:38,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:39,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:40,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:41,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:42,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:43,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:44,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:45,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:46,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:47,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:48,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:49,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:50,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:51,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:52,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:53,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:54,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:55,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:56,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:57,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:58,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:59,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:60,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:61,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:62,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:63,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:64,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:65,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:66,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:67,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:68,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:69,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:70,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:71,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:72,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:73,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:74,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:75,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:76,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:77,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:78,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:79,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:80,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:81,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:82,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:83,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:84,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:85,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:86,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:87,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:88,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:89,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:90,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:91,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:92,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:93,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:94,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:95,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:96,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:97,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:98,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:99,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"},{id:100,stimulus:"crainte",reaction:"peur",frequence:"424 (84.80%)"}
-		]
+	
+	var options = {
+		"dict":$('#dictionary').val(),
+		"method":"que",
+		"offset":newValue-1
 	};
 
-	/* Creation of element */
-	show_loader(false);
-	$('<div class="indiv-info"><div class="line"><img src="'+data.sex+'" alt="sexe"><div>Age : '+data.age+' years old</div><div>From : '+data.from+'</div></div><div class="line"><div>Language : '+data.language+'</div><div>Field of specialization : '+data.specialization+'</div><div>Formation : '+data.formation+'</div> </div></div>').appendTo(".result .result-indiv-quest");
-	$('<table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody>').appendTo(".result .result-indiv-quest");
-	data.response.forEach(element => {
-		$("<tr><td>"+element.id+"</td><td>"+element.stimulus+"</td><td>"+element.reaction+"</td><td>"+element.frequence+"</td></tr>").appendTo(".result .result-indiv-quest table tbody");
-	});
+	/* Ajax request */
+	var jqxhr = $.post("../../api/anketa_search.php", options)
+		.done(function(response){
+			var data = response.data;
+			show_loader(false);
+			switch (response.status) {
+				case 200:
+					let sex = data[0].sex?"../../images/male.png":"../../images/female.png";
+					$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+sex+'" alt="sexe"><div>Age : '+data[0].age+' years old</div><div>From : '+data[0].from+'</div></div><div class="line"><div>Language : '+data[0].language+'</div><div>Field of specialization : '+data[0].specialization+'</div><div>Formation : '+data[0].formation+'</div></div> <table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+					for (var index in data) {
+						if(index == 0) continue;
+						$("<tr><td>"+data[index]['id']+"</td><td>"+data[index]['stimulus']+"</td><td>"+data[index]['reaction']+"</td><td>"+data[index]['frequency']+"</td></tr>").appendTo(".result .result-indiv-quest table tbody");
+					}
+					break;
+				case 400:
+					response.error.forEach(error =>{
+						$('<div>'+error+'<br/></div>').appendTo(".result");
+					});
+					break;
+				default:
+					break;
+			}		
+		})
+		.fail(function(error){
+			show_loader(false);
+			$('<div>The program has encountered an error.</div>').appendTo(".result");
+			console.log(error);
+		});
 }
 
 /**

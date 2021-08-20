@@ -298,4 +298,103 @@ function stimCompare($a,$b){
 	if($a[4] == $b[4]) return 0;
 	return ($a[4] < $b[4])? 1: -1;
 }
+
+function pr($v){ return sprintf("%.2f", $v);}
+
+/**
+*\fn function db_get_ank($test,$offset)
+*\brief Get an anket from the database
+*\param $test Test ID in the database
+*\param $offset get anket number $offset
+*\return The first element of the array contains information about the persone
+*\return Array with that for each word :
+*\return 	Index 1 : The stimulus
+*\return 	Index 2 : The response
+*\return 	Index 3 : The frequency statistics
+*/
+function db_get_ank($test, $offset){
+	$res = Array();
+	$conn = connect();
+	if($conn){
+		$result = $conn->prepare ("select id, data->'caracteristics' ->> 'sex' as sex,
+							data->'caracteristics' ->> 'age' as age,
+							data->'place' ->> 'city' as city,
+							data->'caracteristics' ->> 'lang' as lang_n,
+							data->'caracteristics' ->> 'spec' as spec,
+							data -> 'caracteristics' ->> 'edu' as edu
+						from users_jsonb
+                                                where users_jsonb.id_t={$test} 
+                                                order by users_jsonb.id limit 1 offset {$offset};");
+		$result->execute();
+                $userid = "";
+		if(!$result){$conn = null; return Array();}
+
+		$arr = Array();
+		if( $result->rowCount() == 1){
+			$arr = $result->fetch(PDO::FETCH_ASSOC);
+                        array_push($res, $arr);
+                        $userid = $arr['id'];
+		}else{
+                    return Array();
+                }
+		
+                $res1 = $conn->prepare("select dict.word as dw, count(dict.word) as cnt from dict 
+                                                  left join resp on dict.id=resp.id_w 
+                                                  where resp.word !='-' and dict.test={$test} group by dict.word;");
+		$res1->execute();
+		$answ = Array();
+		for($i=0; $i< $res1->rowCount(); $i++){
+	 		$arr = $res1->fetch(PDO::FETCH_ASSOC);
+                        $answ = array_merge($answ, Array($arr['dw']=>$arr['cnt']));
+		}
+		$result = $conn->prepare("select dict.word as dw, resp.word as rw , count(resp.word) as cnt 
+						from resp inner join dict on resp.id_w=dict.id 
+							where dict.test={$test} and dict.id||'_'||resp.word in 
+								(select dict.id||'_'||resp.word from resp 
+									inner join users_jsonb on users_jsonb.id = resp.id_u 
+									inner join dict on resp.id_w=dict.id 
+										where users_jsonb.id={$userid}) 
+							group by dw, rw order by cnt desc;");
+		$result -> execute();
+		if (!$result) {
+			$conn = null;
+			return Array();
+		}
+
+                for($i=0; $i< $result->rowCount(); $i++){
+			$arr = $result->fetch(PDO::FETCH_ASSOC);
+			array_push($arr, $arr['cnt']. " (".pr(100*$arr['cnt']/$answ[$arr['dw']])."%)");
+			array_push($res, $arr);
+                }
+		return $res;
+	}
+	else {
+		return Array();
+	}
+	return Array();
+}
+
+/**
+*\fn function db_get_num_ank($test)
+*\brief Get number anket in the database
+*\param $test Test ID in the database
+*\return Number of ankets in the database
+*/
+function db_get_num_ank($test){
+	$conn = connect();
+	if($conn){
+		$result = $conn -> prepare("SELECT count(*) as cnt FROM users_jsonb WHERE users_jsonb.id_t = {$test};" );
+		$result -> execute();
+		if (!$result) {
+			$conn = null;
+			return 0;
+		}
+		$val = $result->fetch(PDO::FETCH_ASSOC);
+		return $val['cnt'];
+	}
+	else {
+		return 0;
+	}
+}
+
 ?>
