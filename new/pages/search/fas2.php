@@ -222,6 +222,7 @@
 	<script src="../../layout/scripts/search.js"></script>
 	<script>
 		init_loader();
+		var lang='<?php echo $_SESSION["lang"];?>';
 		<?php
 		/* initialization of search method */
 		if(isset($_GET["method"]) && isset($_GET["num"])){

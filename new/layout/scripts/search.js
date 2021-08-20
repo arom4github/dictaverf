@@ -280,6 +280,11 @@ function initQuestionnaires(){
 	show_loader(true);
 	/* Var initializing */
 	let max = 1;
+	var llang = "";
+	//var lang = 'ru'
+	readTextFile("../lang/data.json", function(text){
+    		llang = JSON.parse(text);
+	});
 
 	$('#quest-number-max').val(max);
 	$('.search_nav')[0].children[3].innerText = "1/"+ max;
@@ -328,7 +333,7 @@ function initQuestionnaires(){
 			switch (response.status) {
 				case 200:
 					let sex = data[0].sex?"../../images/male.png":"../../images/female.png";
-					$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+sex+'" alt="sexe"><div>Age : '+data[0].age+' years old</div><div>From : '+data[0].from+'</div></div><div class="line"><div>Language : '+data[0].language+'</div><div>Field of specialization : '+data[0].specialization+'</div><div>Formation : '+data[0].formation+'</div></div> <table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+					$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+sex+'" alt="sexe"><div>'+llang.filter.age[lang]+': '+data[0].age+'</div><div>'+llang.filter.city[lang]+': '+data[0].from+'</div></div><div class="line"><div>'+llang.filter.language[lang]+': '+data[0].language+'</div><div>'+llang.filter.specialization[lang]+': '+data[0].specialization+'</div><div>'+llang.filter.education.title[lang]+': '+data[0].formation+'</div></div> <table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
 					for (var index in data) {
 						if(index == 0) continue;
 						$("<tr><td>"+data[index]['id']+"</td><td>"+data[index]['stimulus']+"</td><td>"+data[index]['reaction']+"</td><td>"+data[index]['frequency']+"</td></tr>").appendTo(".result .result-indiv-quest table tbody");
@@ -351,6 +356,19 @@ function initQuestionnaires(){
 
 }
 
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        } else {
+	}
+    }
+    rawFile.send(null);
+}
+
 /**
  * Calculate which questionnaire to display and display it
  * @param {string} diff The number of the questionnaire compared to the current one
@@ -358,6 +376,12 @@ function initQuestionnaires(){
 function printQuestionnaire(diff){
 	$('.result').empty();
 	show_loader(true);
+	//usage:
+	var llang = "";
+	//var lang = 'ru'
+	readTextFile("../lang/data.json", function(text){
+    		llang = JSON.parse(text);
+	});
 	/* Define the new value */
 	let actualValue = parseInt(document.getElementById("quest-number-current").value);
 	let maxValue = parseInt(document.getElementById("quest-number-max").value)
@@ -406,7 +430,7 @@ function printQuestionnaire(diff){
 			switch (response.status) {
 				case 200:
 					let sex = data[0].sex?"../../images/male.png":"../../images/female.png";
-					$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+sex+'" alt="sexe"><div>Age : '+data[0].age+' years old</div><div>From : '+data[0].from+'</div></div><div class="line"><div>Language : '+data[0].language+'</div><div>Field of specialization : '+data[0].specialization+'</div><div>Formation : '+data[0].formation+'</div></div> <table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+					$('<div class="result-indiv-quest"><div class="indiv-info"><div class="line"><img src="'+sex+'" alt="sexe"><div>'+llang.filter.age[lang]+': '+data[0].age+'</div><div>'+llang.filter.city[lang]+': '+data[0].from+'</div></div><div class="line"><div>'+llang.filter.language[lang]+': '+data[0].language+'</div><div>'+llang.filter.specialization[lang]+': '+data[0].specialization+'</div><div>'+llang.filter.education.title[lang]+': '+data[0].formation+'</div></div> <table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th><th>Frequency</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
 					for (var index in data) {
 						if(index == 0) continue;
 						$("<tr><td>"+data[index]['id']+"</td><td>"+data[index]['stimulus']+"</td><td>"+data[index]['reaction']+"</td><td>"+data[index]['frequency']+"</td></tr>").appendTo(".result .result-indiv-quest table tbody");

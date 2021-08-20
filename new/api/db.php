@@ -351,10 +351,10 @@ function db_get_ank($test, $offset){
 						from resp inner join dict on resp.id_w=dict.id 
 							where dict.test={$test} and dict.id||'_'||resp.word in 
 								(select dict.id||'_'||resp.word from resp 
-									inner join users_jsonb on users_jsonb.id = resp.id_u 
 									inner join dict on resp.id_w=dict.id 
-										where users_jsonb.id={$userid}) 
+										where resp.id_u={$userid}) 
 							group by dw, rw order by cnt desc;");
+
 		$result -> execute();
 		if (!$result) {
 			$conn = null;
