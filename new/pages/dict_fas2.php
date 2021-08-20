@@ -9,7 +9,7 @@
 		<div id="breadcrumb" class="hoc clear">
 			<ul>
 				<li><a href="../index.php"><?php echo $lang->path->home->{$_SESSION["lang"]}; ?></a></li>
-				<li><a href="#"><?php echo $lang->dict->fasn->{$_SESSION["lang"]}; ?></a></li>
+				<li><a href="#"><?php echo $lang->dict->fas2->{$_SESSION["lang"]}; ?></a></li>
 			</ul>
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="stim">
 					<h2><?php echo $lang->dict->stim_title->{$_SESSION["lang"]}; ?></h2>
-					<p><?php echo $lang->fasn->stim->{$_SESSION["lang"]}; ?></p>
+					<p><?php echo $lang->fas2->stim->{$_SESSION["lang"]}; ?></p>
 					<p>abandonner, absence, absolument, accepter, accès, accompagner, accord, accorder, accueillir,
 						accuser, acheter, acquérir, acte, action, activité, actuel, admettre, administration, adopter,
 						adresser, affaire, affirmer, âge, agent, agir, aide, aider, aimer, air, ajouter, allemand,
