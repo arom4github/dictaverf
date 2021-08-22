@@ -271,6 +271,232 @@ function db_back_dict($test, $methodParam,$filter){
 	return Array();
 }
 
+function color_assignement ($w){
+        $a = array("#FFFFFF","#863B52","#006952","#CBC3F9",
+                   "#000000","#EB5EF1","#FF0F0F","#515D10",
+                   "#00A8F2","#EC7F23","#939393","#F7BACB",
+                   "#00CA29","#CBD39C","#9BDDCC","#51488A");
+        return $a{$w & 15};
+}
+
+
+function db_fjoint_dict($tst, $methodParam){
+	global $db_host, $db_user, $db_pass, $db_enc, $db_name, $db_port;
+	
+	$conn = connect($db_host, $db_port, $db_name, $db_user, $db_pass, $db_enc);
+	if($conn){
+		//$search = searchRequest($json);
+                $search_chr = "";
+	        if(strlen($methodParam)>1) {
+                     $search_char = "AND lower(dict.word)='".strtolower($methodParam)."' ";
+                }else{
+                     $search_char = "AND lower(dict.word) like '".strtolower($methodParam[0])."%' ";
+                }
+/*	if (strlen($methodParam) > 0) {
+			$rest = substr(strtolower($methodParam), 1);
+			if (strtolower($methodParam[0]) == 'e') {
+				$search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(e|é|è|ê){$rest}%' ";
+			} else
+			if (strtolower($methodParam[0]) == 'a') {
+				$search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(a|à|â){$rest}%' ";
+			} else
+			if (strtolower($methodParam[0]) == 'o') {
+				$search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(o|œ|ô){$rest}%' ";
+			} else
+			if (strtolower($methodParam[0]) == 'c') {
+				$search_char .= "AND  lower(resp.word_inv) SIMILAR  TO '((un|une|le|la|les) )*(c|ç){$rest}%' ";
+			} else
+			if (strtolower($methodParam[0]) == 'i') {
+				$search_char .= "AND  lower(resp.word_inv)  SIMILAR  TO '((un|une|le|la|les) )*(i|î){$rest}%' ";
+			} else
+			if (strtolower($methodParam[0]) == 'u') {
+				$search_char .= "AND  (lower(resp.word_inv) SIMILAR TO '((un|une|le|la|les) )*(u|û){$rest}%'  AND ".
+				"lower(resp.word) not similar to '(un|une) (1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|l|m|n|o|ô|p|q|r|s|t|v|w|x|y|z)%') ";
+			} else
+			if (strtolower($methodParam[0]) == 'l') {
+				$search_char .= "AND  (lower(resp.word_inv) similar to '((un|une|le|la|les) )*l{$rest}%' AND ".
+				"lower(resp.word) not similar to '(la|le|les) (1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|m|n|o|ô|p|q|r|s|t|u|û|v|w|x|y|z)%') ";
+			} else
+			if (strtolower($methodParam[0]) == '?') {
+				$search_char .= "AND  lower(resp.word_inv)  NOT SIMILAR  TO ".
+				"'(1|2|3|4|5|6|7|8|9|0|a|à|â|b|c|ç|d|e|é|è|ê|f|g|h|i|î|j|k|l|m|n|o|œ|ô|p|q|r|s|t|u|û|v|w|x|y|z)%' ";
+			} else {
+				$search_char .= "AND lower(resp.word_inv) similar to '((un|une|le|la|les) )*".strtolower($methodParam).
+				"%' ";
+			}
+		}
+*/
+
+		// commented  base dict
+		//if($base == 1) $search.= "AND dict.base='T' ";
+		
+                $res_comm = $conn->prepare ("select dict.word from dict where dict.test in (24,25,26,27) $search_char group by dict.word order by dict.word;");
+		$res_comm->execute();
+
+                if(!$res_comm){disconnect($conn); return Array();}
+		$res = Array();
+		$res_comm_arr = $res_comm->fetchAll(PDO::FETCH_NUM);
+		for($i=0; $i< count($res_comm_arr); $i++){
+                        array_push($res, Array($res_comm_arr[$i][0], "-", "&nbsp;", "&nbsp;", "&nbsp;", "&nbsp;","&nbsp;"));
+                }
+		$response = array();
+		$tl = Array();
+		if($tst == -1)  array_push($tl,-1,24,25,26,27);
+		if($tst == -2)  array_push($tl,-1,29,30,31,32);
+
+		$search = "";
+		foreach($tl as $test){
+        	        $t_search = "dict.test={$test}";
+			$search_adv = "users_jsonb.id_t in (".join(',',$tl).")";
+                	if ($test == -1)
+				$t_search = "dict.test in (".join(',',$tl).")";
+
+			//print_r($t_search);
+			$result = $conn->prepare("select resp.word as rw, dict.word, count(resp.word) as cnt 
+							from resp inner join dict on dict.id=resp.id_w   
+							where {$t_search} {$search_char} and resp.id_u in (Select users_jsonb.id from users_jsonb where {$search_adv} {$search})
+							and resp.word != '-'
+							group by dict.word, rw 
+							order by dict.word, cnt desc, rw;");
+			$result->execute();	
+			/*echo "select resp.word as rw, dict.word, count(resp.word) as cnt 
+										from resp inner join dict on dict.id=resp.id_w  
+			where {$t_search} {$search_chr} and resp.id_u in (Select users_jsonb.id from users_jsonb where {$search_adv} {$search})
+										and resp.word != '-'
+										group by dict.word, rw 
+										order by dict.word, cnt desc, rw;</br>";*/
+			if(!$result){ $conn=null; return Array(); }
+	    		if($result->rowCount()<=0){ continue; }							
+			$result_arr = $result->fetchAll(PDO::FETCH_NUM);
+			if($test == -1){	
+				$tmp_row = $result_arr[0];		
+				$tmp_stim = $tmp_row[1];
+				$tmp_stim_array = array();	
+				for($i=0; $i < $result->rowCount(); $i++){				
+					$tmp_row = $result_arr[$i];
+					if($tmp_row[1] == $tmp_stim ) {
+						$tmp_stim_array{$tmp_row[0]}= 0; //array(24=>false,25=>false,26=>false,27=>false);
+					} else {
+						$response{$tmp_stim}=$tmp_stim_array;
+						$tmp_stim = $tmp_row[1];
+						$tmp_stim_array = array ($tmp_row[0]=> 0); //array(24=>false,25=>false,26=>false,27=>false));
+					}
+				} 
+				$response{$tmp_stim}=$tmp_stim_array; //for the last stimulus. 
+			} else {
+		                $v = array($tl[4] => 1, $tl[3] => 2, $tl[2] => 4, $tl[1] => 8);
+				// We do for each country a comparison of the word answered to sort			
+					for($i=0; $i < $result->rowCount(); $i++){
+						$tmp_row = $result_arr[$i];
+						$response{$tmp_row[1]}{$tmp_row[0]} |= $v{$test};
+					}
+					
+			}
+			$str = "";
+			$word = "";
+			$num = -1;
+			$cnt = Array(0,0,0,0,0,0,0); // tableau qui permet de compter
+			for($i=0; $i < $result->rowCount(); $i++){
+				$arr = $result_arr[$i];
+				if($word == ""){ // beginning
+					$word =  $arr[1];
+					if($arr[0] != '-'){ // possible not to have answer so equals - so I increment
+						$str = $arr[0]; // dictword
+						$num = $arr[2]; // count
+						$cnt[0] = $arr[2];
+						$cnt[1] = 1;
+						$cnt[2] = ($arr[2] == 1)?1:0;
+						$cnt[3] = 0;
+					}else{
+						$str = "";
+						$cnt[0] = $arr[2];
+						$cnt[1] = 0;
+						$cnt[2] = 0;
+						$cnt[3] = $arr[2];
+						$num = $arr[2];
+					}
+				}else{
+					if($word == $arr[1]){
+						if($arr[0] != '-'){
+							if(($num != $arr[2]) && ($str !="")){ // verification si même nombre dans ce cas on ne le remet pas
+								$str .= " <b>{$num}</b>; ";
+							}
+							$str .= ", ".$arr[0];
+							$cnt[0] += $arr[2]; // total number of responses
+							$cnt[1] += 1; // different response
+							$cnt[2] += ($arr[2] == 1)?1:0; // number of response which have only 1 stimulus / 1 response
+							$num = $arr[2];
+						}else{
+							$cnt[0] += 0; //$arr[2];
+							$cnt[3] += $arr[2];
+							$num = $arr[2];
+						}
+					}else{
+						$str = preg_replace("/^, /", "", $str);
+						$str = preg_replace("/; , /", "; ", $str);
+						$str .= " <b>{$num}</b>";
+						//array_push($res, Array($word, "{$cnt[0]}", "{$str}<br>({$cnt[0]}, {$cnt[1]}, {$cnt[3]}, {$cnt[2]})"));
+					        for($j=0; $j< $res_comm->rowCount(); $j++){
+				                    $arr1 = $res_comm_arr[$j];
+		                                    if($arr1[0] == $word){
+							if($test == $tl[0]) $res[$j][2] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+							if($test == $tl[1]) $res[$j][3] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+							if($test == $tl[2]) $res[$j][4] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+							if($test == $tl[3]) $res[$j][5] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+							if($test == $tl[4]) $res[$j][6] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+						        break;
+		                                    }
+		                                    //array_push($res, Array($arr[0], "", "", "", ""));
+		                                }
+		                                $num = -1;
+						$word = $arr[1];
+						$str = "";
+						if($arr[0] != '-'){
+							if(($num != $arr[2]) && ($str !="")){
+								$str .= " \\{$num}\\; ";
+							}
+							$str .= ", ".$arr[0];
+							$cnt[0] = $arr[2];
+							$cnt[1] = 1;
+							$cnt[2] = ($arr[2] == 1)?1:0;
+							$cnt[3] = 0;
+							$num = $arr[2];
+						}else{
+							$str = "";
+							$cnt[0] = $arr[2]; $cnt[1] = 0; $cnt[2] = 0; $cnt[3] = $arr[2];
+							$num = $arr[2];
+						}
+					}
+				}
+			} // foreach
+			$str = preg_replace("/^, /", "", $str);
+			$str = preg_replace("/; , /", "; ", $str);
+			$str .= " <b>{$num}</b>";
+			if($word != "") {
+		        for($j=0; $j < $res_comm->rowCount(); $j++){
+			    $arr = $res_comm_arr[$j];
+	                    if($arr[0] == $word){
+			        if($test == $tl[0]) $res[$j][2] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+			        if($test == $tl[1]) $res[$j][3] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+		        	if($test == $tl[2]) $res[$j][4] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+			        if($test == $tl[3]) $res[$j][5] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+			        if($test == $tl[4]) $res[$j][6] = "{$str}<br>({$cnt[0]}, {$cnt[1]} [".pr(100*$cnt[1]/$cnt[0])."%], {$cnt[3]}, {$cnt[2]})";
+			        break;
+	                    }
+        	        }
+			} // if $word != ""
+			//usort($res, "rcmp");
+		} // foreach test
+         
+		return $res;
+	}else{
+		return Array();
+	}
+	return Array();
+}
+
+
+
 /**
 *\fn function numberCompare($a, $b)
 *\brief Compare 2 numbers (based on index 1 of result array).
