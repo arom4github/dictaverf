@@ -271,14 +271,19 @@ function db_back_dict($test, $methodParam,$filter){
 	return Array();
 }
 
-function color_assignement ($w){
-        $a = array("#FFFFFF","#863B52","#006952","#CBC3F9",
-                   "#000000","#EB5EF1","#FF0F0F","#515D10",
-                   "#00A8F2","#EC7F23","#939393","#F7BACB",
-                   "#00CA29","#CBD39C","#9BDDCC","#51488A");
-        return $a{$w & 15};
+function getColor($resp, $stim, $list){
+	try{
+		$c = "jdcs";
+		$n = $list{$stim}{$resp};
+		$c .= ($n & 1)?'f':'_';
+		$c .= ($n & 2)?'b':'_';
+		$c .= ($n & 4)?'s':'_';
+		$c .= ($n & 8)?'c':'_';
+		return $c;
+	}catch(Exception $e){
+		return "jdcs____";
+	}
 }
-
 
 function db_fjoint_dict($tst, $methodParam){
 	global $db_host, $db_user, $db_pass, $db_enc, $db_name, $db_port;
@@ -351,7 +356,6 @@ function db_fjoint_dict($tst, $methodParam){
                 	if ($test == -1)
 				$t_search = "dict.test in (".join(',',$tl).")";
 
-			//print_r($t_search);
 			$result = $conn->prepare("select resp.word as rw, dict.word, count(resp.word) as cnt 
 							from resp inner join dict on dict.id=resp.id_w   
 							where {$t_search} {$search_char} and resp.id_u in (Select users_jsonb.id from users_jsonb where {$search_adv} {$search})
@@ -359,12 +363,7 @@ function db_fjoint_dict($tst, $methodParam){
 							group by dict.word, rw 
 							order by dict.word, cnt desc, rw;");
 			$result->execute();	
-			/*echo "select resp.word as rw, dict.word, count(resp.word) as cnt 
-										from resp inner join dict on dict.id=resp.id_w  
-			where {$t_search} {$search_chr} and resp.id_u in (Select users_jsonb.id from users_jsonb where {$search_adv} {$search})
-										and resp.word != '-'
-										group by dict.word, rw 
-										order by dict.word, cnt desc, rw;</br>";*/
+
 			if(!$result){ $conn=null; return Array(); }
 	    		if($result->rowCount()<=0){ continue; }							
 			$result_arr = $result->fetchAll(PDO::FETCH_NUM);
@@ -392,6 +391,24 @@ function db_fjoint_dict($tst, $methodParam){
 					}
 					
 			}
+		}
+		foreach($tl as $test){
+        	        $t_search = "dict.test={$test}";
+			$search_adv = "users_jsonb.id_t in (".join(',',$tl).")";
+                	if ($test == -1)
+				$t_search = "dict.test in (".join(',',$tl).")";
+
+			$result = $conn->prepare("select resp.word as rw, dict.word, count(resp.word) as cnt 
+							from resp inner join dict on dict.id=resp.id_w   
+							where {$t_search} {$search_char} and resp.id_u in (Select users_jsonb.id from users_jsonb where {$search_adv} {$search})
+							and resp.word != '-'
+							group by dict.word, rw 
+							order by dict.word, cnt desc, rw;");
+			$result->execute();	
+
+			if(!$result){ $conn=null; return Array(); }
+	    		if($result->rowCount()<=0){ continue; }							
+			$result_arr = $result->fetchAll(PDO::FETCH_NUM);
 			$str = "";
 			$word = "";
 			$num = -1;
@@ -401,7 +418,7 @@ function db_fjoint_dict($tst, $methodParam){
 				if($word == ""){ // beginning
 					$word =  $arr[1];
 					if($arr[0] != '-'){ // possible not to have answer so equals - so I increment
-						$str = $arr[0]; // dictword
+						$str = "<div class='".getColor($arr[0],$word,$response)."'>".$arr[0]."</div>"; // dictword
 						$num = $arr[2]; // count
 						$cnt[0] = $arr[2];
 						$cnt[1] = 1;
@@ -421,7 +438,7 @@ function db_fjoint_dict($tst, $methodParam){
 							if(($num != $arr[2]) && ($str !="")){ // verification si même nombre dans ce cas on ne le remet pas
 								$str .= " <b>{$num}</b>; ";
 							}
-							$str .= ", ".$arr[0];
+							$str .= ", <div class='".getColor($arr[0],$word,$response)."'>".$arr[0]."</div>";
 							$cnt[0] += $arr[2]; // total number of responses
 							$cnt[1] += 1; // different response
 							$cnt[2] += ($arr[2] == 1)?1:0; // number of response which have only 1 stimulus / 1 response
@@ -455,7 +472,7 @@ function db_fjoint_dict($tst, $methodParam){
 							if(($num != $arr[2]) && ($str !="")){
 								$str .= " \\{$num}\\; ";
 							}
-							$str .= ", ".$arr[0];
+							$str .= ", <div class='".getColor($arr[0],$word,$response)."'>".$arr[0]."</div>";
 							$cnt[0] = $arr[2];
 							$cnt[1] = 1;
 							$cnt[2] = ($arr[2] == 1)?1:0;

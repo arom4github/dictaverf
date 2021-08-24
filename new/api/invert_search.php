@@ -28,35 +28,20 @@ switch ($filter->getDict()) {
 		switch ($filter->getMethod()) {
 			case 'stim':
 				$res = db_back_dict(12, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			case 'react':
 				$res = db_back_dict(12, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			default:
-				/* Letter/word method */
 				$res = db_back_dict(12, $_POST["range"],$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
+		}
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"reaction"=>$res[$i][0],
+				"stimulus"=>$res[$i][2]
+			));
 		}
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
 		break;
@@ -65,33 +50,25 @@ switch ($filter->getDict()) {
 		$data = array();
 		switch ($filter->getMethod()) {
 			case 'stim':
-				for ($i=0; $i < 5; $i++) { 
-					array_push($data,array(
-						"id"=>$i,
-						"stimulus"=>"justice",
-						"reactions"=>"loi 95; droit 80; balance 70; tribunal 40; égalité 26; juge 19; avocat 18; équité 17; lois 13;palais 11; paix 10; injustice 8; peine 5; aveugle, cour, sociale 4; équitable, magistrat, musique,ordre, procès 3; épée, état, honneur, idéal, jurisprudence, juste, légalité, mensonge, parlement,police, prison, social, tous, tribunaux, utopie, vengeance, vertu, voleur 2; armée, aucune,Batman, belle, bêtise, bien, blason, chaos, ciel, civilisation, commune, conflit, court, croix,d.a.n.c.e, Dati, de classe, devoir, doute, Droit, droits, droiture, électron, équilibre, erreur judiciaire, faire, fonction, française, glaive, gouvernement, Hadopi, héros, hommes, honnête,humanité, impartiale, inégalité, inexistante, inique, injuste, interprétation, introuvable,jamais, jugement, jury, jus naturalisme, justice, laquelle, légale, lente, lenteur, liberté,lourde, magistrature, marteau, Metallica, métier, morale, norme, organisation, parquet, pénale,pouvoir, punition, règles, réinsertion, rigidité, rigueur, robe, Saint Louis, sceaux, Simian,simulacre, système, valeur, vérité, violence, vrai 1<br/>(543, 143, 13, 84)"
-					));
-				}
+				$res = db_rjoint_dict(-1, explode("-", $_POST["range"]),$filter);
 				break;
-			case 'frequency':
-				for ($i=0; $i < 5; $i++) { 
-					array_push($data,array(
-						"id"=>$i,
-						"stimulus"=>"justice",
-						"reactions"=>"loi 95; droit 80; balance 70; tribunal 40; égalité 26; juge 19; avocat 18; équité 17; lois 13;palais 11; paix 10; injustice 8; peine 5; aveugle, cour, sociale 4; équitable, magistrat, musique,ordre, procès 3; épée, état, honneur, idéal, jurisprudence, juste, légalité, mensonge, parlement,police, prison, social, tous, tribunaux, utopie, vengeance, vertu, voleur 2; armée, aucune,Batman, belle, bêtise, bien, blason, chaos, ciel, civilisation, commune, conflit, court, croix,d.a.n.c.e, Dati, de classe, devoir, doute, Droit, droits, droiture, électron, équilibre, erreur judiciaire, faire, fonction, française, glaive, gouvernement, Hadopi, héros, hommes, honnête,humanité, impartiale, inégalité, inexistante, inique, injuste, interprétation, introuvable,jamais, jugement, jury, jus naturalisme, justice, laquelle, légale, lente, lenteur, liberté,lourde, magistrature, marteau, Metallica, métier, morale, norme, organisation, parquet, pénale,pouvoir, punition, règles, réinsertion, rigidité, rigueur, robe, Saint Louis, sceaux, Simian,simulacre, système, valeur, vérité, violence, vrai 1<br/>(543, 143, 13, 84)"
-					));
-				}
+			case 'react':
+				$res = db_rjoint_dict(-1, explode("-", $_POST["range"]),$filter);
 				break;
 			default:
-				/* Letter/word method */
-				for ($i=0; $i < 5; $i++) { 
-					array_push($data,array(
-						"id"=>$i,
-						"stimulus"=>"justice",
-						"reactions"=>"loi 95; droit 80; balance 70; tribunal 40; égalité 26; juge 19; avocat 18; équité 17; lois 13;palais 11; paix 10; injustice 8; peine 5; aveugle, cour, sociale 4; équitable, magistrat, musique,ordre, procès 3; épée, état, honneur, idéal, jurisprudence, juste, légalité, mensonge, parlement,police, prison, social, tous, tribunaux, utopie, vengeance, vertu, voleur 2; armée, aucune,Batman, belle, bêtise, bien, blason, chaos, ciel, civilisation, commune, conflit, court, croix,d.a.n.c.e, Dati, de classe, devoir, doute, Droit, droits, droiture, électron, équilibre, erreur judiciaire, faire, fonction, française, glaive, gouvernement, Hadopi, héros, hommes, honnête,humanité, impartiale, inégalité, inexistante, inique, injuste, interprétation, introuvable,jamais, jugement, jury, jus naturalisme, justice, laquelle, légale, lente, lenteur, liberté,lourde, magistrature, marteau, Metallica, métier, morale, norme, organisation, parquet, pénale,pouvoir, punition, règles, réinsertion, rigidité, rigueur, robe, Saint Louis, sceaux, Simian,simulacre, système, valeur, vérité, violence, vrai 1<br/>(543, 143, 13, 84)"
-					));
-				}
+				$res = db_rjoint_dict(-1, $_POST["range"],$filter);
 				break;
+		}
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"stimulus"=>$res[$i][0],
+				"joint"=>$res[$i][2],
+				"france"=>$res[$i][3],
+				"belgique"=>$res[$i][4],
+				"suisse"=>$res[$i][5],
+				"canada"=>$res[$i][6]
+			));
 		}
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
 		break;
@@ -101,35 +78,20 @@ switch ($filter->getDict()) {
 		switch ($filter->getMethod()) {
 			case 'stim':
 				$res = db_back_dict(35, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			case 'react':
 				$res = db_back_dict(35, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			default:
-				/* Letter/word method */
 				$res = db_back_dict(35, $_POST["range"],$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
+		}
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"reaction"=>$res[$i][0],
+				"stimulus"=>$res[$i][2]
+			));
 		}
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
 		break;
@@ -139,35 +101,21 @@ switch ($filter->getDict()) {
 		switch ($filter->getMethod()) {
 			case 'stim':
 				$res = db_back_dict(38, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			case 'react':
 				$res = db_back_dict(38, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			default:
 				/* Letter/word method */
 				$res = db_back_dict(38, $_POST["range"],$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
+		}
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"reaction"=>$res[$i][0],
+				"stimulus"=>$res[$i][2]
+			));
 		}
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
 		break;
@@ -177,35 +125,20 @@ switch ($filter->getDict()) {
 		switch ($filter->getMethod()) {
 			case 'stim':
 				$res = db_back_dict(37, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			case 'react':
 				$res = db_back_dict(37, explode("-", $_POST["range"]),$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
 			default:
-				/* Letter/word method */
 				$res = db_back_dict(37, $_POST["range"],$filter);
-				for ($i=0; $i < count($res); $i++) { 
-					array_push($data,array(
-						"id"=>$i+1,
-						"reaction"=>$res[$i][0],
-						"stimulus"=>$res[$i][2]
-					));
-				}
 				break;
+		}
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"reaction"=>$res[$i][0],
+				"stimulus"=>$res[$i][2]
+			));
 		}
 
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));

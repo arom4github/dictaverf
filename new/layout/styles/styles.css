@@ -479,7 +479,7 @@
 }
 
 .result .result-table tr:hover{
-    background-color: #c4c4c4;
+//    background-color: #c4c4c4;
 }
 
 .result table .differents-countries{
@@ -671,3 +671,22 @@
     }
 
 }
+
+.jdcs____ { display:inline; }
+.jdcs___c { display:inline; color:#863B52; }
+.jdcs__s_ { display:inline; color:#006952; }
+.jdcs__sc { display:inline; color:#CBC3F9; }
+.jdcs_b__ { display:inline; color:#000000; }
+.jdcs_b_c { display:inline; color:#EB5EF1; }
+.jdcs_bs_ { display:inline; color:#FF0F0F; }
+.jdcs_bsc { display:inline; color:#515D10; }
+.jdcsf___ { display:inline; color:#00A8F2; }
+.jdcsf__c { display:inline; color:#EC7F23; }
+.jdcsf_s_ { display:inline; color:#939393; }
+.jdcsf_sc { display:inline; color:#F7BACB; }
+.jdcsfb__ { display:inline; color:#00CA29; }
+.jdcsfb_c { display:inline; color:#CBD39C; }
+.jdcsfbs_ { display:inline; color:#9BDDCC; }
+.jdcsfbsc { display:inline; color:#51488A; }
+
+
