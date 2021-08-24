@@ -27,6 +27,7 @@
 						</div>
 						<a href="mailto:micheledebrenne@gmail.com">micheledebrenne@gmail.com</a>
 					</div>
+<!--
 					<div class="authors">
 						<img class="borderedbox inspace-5" src="../images/Ufimtseva.png" alt="Ufimtseva">
 						<div class="title text-center"><b><?php echo $lang->authors->authors2->name->{$_SESSION["lang"]}; ?></b></div>
@@ -34,6 +35,7 @@
 							<?php echo $lang->authors->authors2->description->{$_SESSION["lang"]}; ?>
 						</div>
 					</div>
+-->
 					<div class="authors">
 						<img class="borderedbox inspace-5" src="../images/Romanenko.png" alt="Romanenko">
 						<div class="title text-center"><b><?php echo $lang->authors->authors3->name->{$_SESSION["lang"]}; ?></b></div>
