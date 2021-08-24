@@ -275,10 +275,10 @@ function getColor($resp, $stim, $list){
 	try{
 		$c = "jdcs";
 		$n = $list{$stim}{$resp};
-		$c .= ($n & 1)?'f':'_';
-		$c .= ($n & 2)?'b':'_';
-		$c .= ($n & 4)?'s':'_';
-		$c .= ($n & 8)?'c':'_';
+		$c .= ($n & 8)?'f':'_';
+		$c .= ($n & 4)?'b':'_';
+		$c .= ($n & 2)?'s':'_';
+		$c .= ($n & 1)?'c':'_';
 		return $c;
 	}catch(Exception $e){
 		return "jdcs____";

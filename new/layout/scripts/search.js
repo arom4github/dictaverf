@@ -163,6 +163,21 @@ function printResDirectSanf(range,filter){
 					for (let index = 0; index < data.length; index++) {
 						$('<tr><td>'+data[index].id+'</td><td>'+data[index].stimulus+'</td><td>'+data[index].joint+'</td>'+data[index].joint+'</td><td>'+data[index].france+'</td><td>'+data[index].belgique+'</td><td>'+data[index].suisse+'</td><td>'+data[index].canada+'</tr>').appendTo(".result-table table tbody");
 					}
+					$(".jdcs___c").on('click', function(event){alert(event.currentTarget.innerText+" presents in Canada database only");});
+					$(".jdcs__s_").on('click', function(event){alert(event.currentTarget.innerText+" presents in Suisse database only");});
+					$(".jdcs__sc").on('click', function(event){alert(event.currentTarget.innerText+" presents in Suisse and Canada databases");});
+					$(".jdcs_b__").on('click', function(event){alert(event.currentTarget.innerText+" presents in Belgique database only");});
+					$(".jdcs_b_c").on('click', function(event){alert(event.currentTarget.innerText+" presents in Belgique and Canada databases");});
+					$(".jdcs_bs_").on('click', function(event){alert(event.currentTarget.innerText+" presents in Belgique and Suisse databases");});
+					$(".jdcs_bsc").on('click', function(event){alert(event.currentTarget.innerText+" presents in Belgique, Suisse and Canada databases");});
+					$(".jdcsf___").on('click', function(event){alert(event.currentTarget.innerText+" presents in France database only");});
+					$(".jdcsf__c").on('click', function(event){alert(event.currentTarget.innerText+" presents in France and  Canada databases");});
+					$(".jdcsf_s_").on('click', function(event){alert(event.currentTarget.innerText+" presents in France and Suisse databases");});
+					$(".jdcsf_sc").on('click', function(event){alert(event.currentTarget.innerText+" presents in France, Suisse and Canada databases");});
+					$(".jdcsfb__").on('click', function(event){alert(event.currentTarget.innerText+" presents in France and  Belgique databases");});
+					$(".jdcsfb_c").on('click', function(event){alert(event.currentTarget.innerText+" presents in France, Belgique and Canada databases");});
+					$(".jdcsfbs_").on('click', function(event){alert(event.currentTarget.innerText+" presents in France, Belgique and  Suisse databases");});
+					$(".jdcsfbsc").on('click', function(event){alert(event.currentTarget.innerText+" presents in all databases");});
 					break;
 				case 400:
 					response.error.forEach(error =>{
@@ -191,7 +206,7 @@ function printResInvertSanf(range,filter,method){
 	const methods = ["letter","stim","react"];
 	if(methods.includes(method)){
 		var options = {
-			"dict":"fas",
+			"dict":$('#dictionary').val(),
 			method,
 			range,
 			filter
