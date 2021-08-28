@@ -8,7 +8,7 @@
 		<div id="breadcrumb" class="hoc clear">
 			<ul>
 				<li><a href="../index.php"><?php echo $lang->path->home->{$_SESSION["lang"]}; ?></a></li>
-				<li><a href="#"><?php echo $lang->navbar->dictionaries->{$_SESSION["lang"]}; ?></a></li>
+				<li><a href="#"><?php echo $lang->navbar->about->{$_SESSION["lang"]}; ?></a></li>
 			</ul>
 		</div>
 	</div>
@@ -18,31 +18,28 @@
 			<!-- main body -->
 			<div class="sidebar one_quarter first">
 				<nav class="sdb_holder">
-					<ul>
-						<li><a href="#dict1"><?php echo $lang->dict->fas->{$_SESSION["lang"]}; ?></a></li>
-						<li><a href="#dict2"><?php echo $lang->dict->fas2->{$_SESSION["lang"]}; ?></a></li>
-						<li><a href="#dict3"><?php echo $lang->dict->sanfn->{$_SESSION["lang"]}; ?></a></li>
-						<li><a href="#dict4"><?php echo $lang->dict->fas1_red->{$_SESSION["lang"]}; ?></a></li>
-						<li><a href="#dict5"><?php echo $lang->dict->fas2_red->{$_SESSION["lang"]}; ?></a></li>
-					</ul>
+				    <ul>
+					<li><a href="#about"><?php echo $lang->navbar->about->{$_SESSION["lang"]}; ?></a></li>
+					<li><a href="#papers"><?php echo $lang->navbar->papers->{$_SESSION["lang"]}; ?></a></li>
+					<li><?php echo $lang->navbar->dictionaries->{$_SESSION["lang"]}; ?>
+					    <ul>
+						<li><a href="dict_fas.php"><?php echo $lang->dict->fas->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="dict_fas2.php"><?php echo $lang->dict->fas2->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="dict_sanfn.php"><?php echo $lang->dict->sanfn->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="dict_fas1_red.php"><?php echo $lang->dict->fas1_red->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="dict_fas2_red.php"><?php echo $lang->dict->fas2_red->{$_SESSION["lang"]}; ?></a></li>
+					   </ul>
+					</li>
+				    </ul>
 				</nav>
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="content three_quarter">
-				<div id="dict1">
-					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->fas->link; ?>
+				<div id="about">
+					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->link; ?>
 				</div>
-				<div id="dict2">
-					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->fas2->link; ?>
-				</div>
-				<div id="dict3">
-					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->sanfn->link; ?>
-				</div>
-				<div id="dict4">
-					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->fas1_red->link; ?>
-				</div>
-				<div id="dict5">
-					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->fas2_red->link; ?>
+				<div id="papers">
+					<?php include __DIR__."/lang/".$_SESSION["lang"]."/".$lang->about->papers->link; ?>
 				</div>
 			</div>
 			<!-- / main body -->

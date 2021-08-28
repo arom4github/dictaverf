@@ -16,6 +16,10 @@
 			"fr":"Dictionnaires",
 			"ru":"Словари"
 		},
+		"papers":{
+			"fr":"Publications",
+			"ru":"Публикации"
+		},
 		"fas":{
 			"fr":"Dictionnaire des associations évoquées par les mots pour le français 2010  (DAF-1)",
 			"ru":"Французский Ассоциативный Словарь 2010 (ФАС-1)"
@@ -60,21 +64,10 @@
 		}
 	},
 	"about":{
-		"fas":{
-			"link":"about_fas.html"
+		"papers":{
+			"link":"about_papers.html"
 		},
-		"sanfn":{
-			"link":"about_sanfn.html"
-		},
-		"fas2":{
-			"link":"about_fas2.html"
-		},
-		"fas1_red":{
-			"link":"about_fas1_red.html"
-		},
-		"fas2_red":{
-			"link":"about_fas2_red.html"
-		}
+		"link":"about_project.html"
 	},
 	"authors":{
 		"authors1":{
@@ -169,27 +162,27 @@
 		},
 		"search_method":{
 			"letter":{
-				"fr":"Par ordre alphabétique (lettre)",
+				"fr":"par ordre alphabétique (lettre)",
 				"ru":"В алфавитном порядке"
 			},
 			"word":{
-				"fr":"Par ordre alphabétique (mot)",
+				"fr":"pour un mot",
 				"ru":"По отдельному стимулу"
 			},
 			"stim":{
-				"fr":"Par le nombre de stimuli",
+				"fr":"par le nombre de stimuli",
 				"ru":"По количеству стимулов"
 			},
 			"react":{
-				"fr":"Par le nombre de réponses",
+				"fr":"par le nombre de réponses",
 				"ru":"По количеству реакций"
 			},
 			"frequency":{
-				"fr":"Par fréquence absolue",
+				"fr":"par fréquence absolue",
 				"ru":"По абсолютной частотности"
 			},
 			"questionnaires":{
-				"fr":"Questionnaires individuels",
+				"fr":"questionnaires individuels",
 				"ru":"Индивидуальные анкеты"
 			}
 		},
