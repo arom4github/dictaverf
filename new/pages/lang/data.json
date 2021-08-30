@@ -251,28 +251,7 @@
 		}
 	},
 	"help":{
-		"intro":{
-			"fr":"Vous avez la possibilité de filtrer les données en cliquant sur le filtre pour les dictionnaires direct et inversé.",
-			"ru":"У вас есть возможность отфильтровать данные, нажав на фильтр для прямого и обратного словарей."
-		},
-		"fas":{
-			"link":"help_fas.html"
-		},
-		"sanf":{
-			"link":"help_sanf.html"
-		},
-		"sanfn":{
-			"link":"help_sanfn.html"
-		},
-		"fasn":{
-			"link":"help_fasn.html"
-		},
-		"fas1_red":{
-			"link":"help_fas1_red.html"
-		},
-		"fas2_red":{
-			"link":"help_fas2_red.html"
-		}
+		"link":"help.html"
 	},
 	"search":{
 		"search":{
