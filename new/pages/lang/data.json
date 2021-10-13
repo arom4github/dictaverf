@@ -130,6 +130,10 @@
 			"fr":"Stimuli",
 			"ru":"Стимулы"
 		},
+		"reaction_title":{
+			"fr":"Réponse",
+			"ru":"Реакция"
+		},
 		"search_direct":{
 			"title":{
 				"fr":"Dictionnaire direct",
@@ -168,6 +172,10 @@
 			"word":{
 				"fr":"pour un mot",
 				"ru":"По отдельному стимулу"
+			},
+			"reaction":{
+				"fr":"pour un réponses",
+				"ru":"По отдельной реакции"
 			},
 			"stim":{
 				"fr":"par le nombre de stimuli",
