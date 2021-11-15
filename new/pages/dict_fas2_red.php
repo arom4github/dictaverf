@@ -96,7 +96,7 @@
 						reprendre, résoudre, respect, reste, rester, résultat, retenir, retirer, retour, retourner, retrouver,
 						réunir, réussir, révéler, revenir, riche, rôle, rouge, route, rue, saisir, salle, sang, santé, savoir,
 						scène, science, second, secret, sein, semaine, sembler, sens, sentiment, sentir, séparer, sérieux, service,
-						servir, seul, siècle, signe, simple, simplement, situation, social, société, soin, soir, soldat, solution,
+						servir, seul, siècle, signe, simple, simplement, situation, social, société, soin, soir, soldat,
 						somme, sorte, sortir, souffrir, soumettre, source, soutenir, souvenir, subir, succès, suffire, suite,
 						suivant, suivre, sujet, supérieur, sûr, surprendre, système, table, tâche, témoin, temps, tendre, tenir,
 						tenter, terme, terminer, terrain, terre, tête, tirer, titre, tomber, ton, toucher, tour, tourner, train,
