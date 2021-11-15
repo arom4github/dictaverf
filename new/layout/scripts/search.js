@@ -209,27 +209,25 @@ function printResInvertSanf(range,filter,method){
 			"dict":$('#dictionary').val(),
 			method,
 			range,
-			filter
+			filter,
 		};
 	}else{
 		var options = {
 			"dict":$('#dictionary').val(),
 			"method":"letter",
 			range,
-			filter
+			filter,
 		};
 	}
-
 	/* Ajax request */
 	var jqxhr = $.post("../../api/invert_search.php", options)
 	.done(function(response){
 		var data = response.data;
-		show_loader(false);
 		switch (response.status) {
 			case 200:
-				$('<div class="result-table"><table><thead><tr><th>#</th><th>Stimulus</th><th>Joint</th><th>France</th><th>Belgique</th><th>Suisse</th><th>Canada</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+				$('<div class="result-table"><table><thead><tr><th>#</th><th>Response</th><th>Joint</th><th>France</th><th>Belgique</th><th>Suisse</th><th>Canada</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
 				for (let index = 0; index < data.length; index++) {
-						$('<tr><td>'+data[index].id+'</td><td>'+data[index].stimulus+'</td><td>'+data[index].joint+'</td>'+data[index].joint+'</td><td>'+data[index].france+'</td><td>'+data[index].belgique+'</td><td>'+data[index].suisse+'</td><td>'+data[index].canada+'</tr>').appendTo(".result-table table tbody");
+						$('<tr><td>'+data[index].id+'</td><td>'+data[index].reaction+'</td><td>'+data[index].joint+'</td>'+data[index].joint+'</td><td>'+data[index].france+'</td><td>'+data[index].belgique+'</td><td>'+data[index].suisse+'</td><td>'+data[index].canada+'</tr>').appendTo(".result-table table tbody");
 				}
 				break;
 			case 400:
@@ -240,6 +238,7 @@ function printResInvertSanf(range,filter,method){
 			default:
 				break;
 		}		
+		show_loader(false);
 	})
 	.fail(function(error){
 		show_loader(false);
@@ -329,7 +328,7 @@ function printRes(range){
 
 		}
 	}
-	show_loader(false);
+	//show_loader(false);
 }
 
 /**

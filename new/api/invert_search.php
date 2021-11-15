@@ -62,7 +62,7 @@ switch ($filter->getDict()) {
 		for ($i=0; $i < count($res); $i++) { 
 			array_push($data,array(
 				"id"=>$i+1,
-				"stimulus"=>$res[$i][0],
+				"reaction"=>$res[$i][0],
 				"joint"=>$res[$i][2],
 				"france"=>$res[$i][3],
 				"belgique"=>$res[$i][4],
