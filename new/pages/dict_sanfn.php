@@ -72,7 +72,7 @@
 					<p><?php echo $lang->dict->search_invert->description->{$_SESSION["lang"]}; ?></p>
 					<ul>
 						<li><a href="./search/sanfn.php?method=inv&num=0"><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>
-						<li><a href="./search/sanfn.php?method=inv&num=1"><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="./search/sanfn.php?method=inv&num=1"><?php echo $lang->dict->search_method->reaction->{$_SESSION["lang"]}; ?></a></li>
 						<li><a href="./search/sanfn.php?method=inv&num=2"><?php echo $lang->dict->search_method->stim->{$_SESSION["lang"]}; ?></a></li>
 						<li><a href="./search/sanfn.php?method=inv&num=3"><?php echo $lang->dict->search_method->frequency->{$_SESSION["lang"]}; ?></a></li>
 					</ul>

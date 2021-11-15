@@ -17,7 +17,7 @@
 								echo '<li><a>'. $lang->dict->search_invert->title->{$_SESSION["lang"]}.'</a></li>';
 								switch ($_GET["num"]) {
 									case '1':
-										echo '<li><a>'.$lang->dict->search_method->word->{$_SESSION["lang"]}.'</a></li>';
+										echo '<li><a>'.$lang->dict->search_method->reaction->{$_SESSION["lang"]}.'</a></li>';
 										break;
 									case '2':
 										echo '<li><a>'.$lang->dict->search_method->stim->{$_SESSION["lang"]}.'</a></li>';
@@ -68,7 +68,7 @@
 						<li><a class="sdb_section"><?php echo $lang->dict->search_invert->title->{$_SESSION["lang"]}; ?></a>
 							<ul>
 								<li><a href="?method=inv&num=0"><?php echo $lang->dict->search_method->letter->{$_SESSION["lang"]}; ?></a></li>
-								<li><a href="?method=inv&num=1"><?php echo $lang->dict->search_method->word->{$_SESSION["lang"]}; ?></a></li>
+								<li><a href="?method=inv&num=1"><?php echo $lang->dict->search_method->reaction->{$_SESSION["lang"]}; ?></a></li>
 								<li><a href="?method=inv&num=2"><?php echo $lang->dict->search_method->stim->{$_SESSION["lang"]}; ?></a></li>
 								<li><a href="?method=inv&num=3"><?php echo $lang->dict->search_method->frequency->{$_SESSION["lang"]}; ?></a></li>
 							</ul>
@@ -99,7 +99,7 @@
 											<div id="word_search">
 												<div class="input_container">
 												<input type="text" class="input_search" id="input_searchDirect" placeholder=" ">
-												<label for=""><?php echo $lang->dict->stim_title->{$_SESSION["lang"]}; ?></label>
+												<label for=""><?php echo $lang->dict->reaction_title->{$_SESSION["lang"]}; ?></label>
 												</div>
 												<button class="btn-search"
 												onclick="printRes(document.getElementById('input_searchDirect').value)"><?php echo $lang->search->search->{$_SESSION["lang"]}; ?></button>
