@@ -96,7 +96,7 @@ function printResInvertFas(range,filter,method){
 	const methods = ["letter","stim","react"];
 	if(methods.includes(method)){
 		var options = {
-			"dict":"fas",
+			"dict":$('#dictionary').val(),
 			method,
 			range,
 			filter
