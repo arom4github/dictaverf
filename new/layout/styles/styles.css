@@ -329,6 +329,7 @@
 /* Filter section */
 .filter-section{
     margin: 15px 0;
+    display: none;
 }
 
 .filter-section .icon-container{
