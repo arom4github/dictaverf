@@ -43,7 +43,7 @@ function printResDirectFas(range,filter,isDefault){
 	/* Configuration */
 	if(isDefault){
 		var options = {
-			"dict":"fas",
+			"dict":$('#dictionary').val(),
 			"method":"letter",
 			range,
 			filter
