@@ -133,14 +133,14 @@
 											?>
 											<div id="reaction_search">
 												<div class="letter_container">
-													<span onclick="printByReact();"><?php echo $lang->search->all->{$_SESSION["lang"]}; ?></span>
-													<span onclick="printByReact();">3000-2000</span>
-													<span onclick="printByReact();">1999-1500</span>
-													<span onclick="printByReact();">1499-1000</span>
-													<span onclick="printByReact();">999-750</span>
-													<span onclick="printByReact();">749-500</span>
-													<span onclick="printByReact();">499-250</span>
-													<span onclick="printByReact();">249-1</span>
+													<span onclick="printRes('1-9999');"><?php echo $lang->search->all->{$_SESSION["lang"]}; ?></span>
+													<span onclick="printRes('2000-3000');">3000-2000</span>
+													<span onclick="printRes('1500-1999');">1999-1500</span>
+													<span onclick="printRes('1000-1499');">1499-1000</span>
+													<span onclick="printRes('750-999');">999-750</span>
+													<span onclick="printRes('500-749');">749-500</span>
+													<span onclick="printRes('250-499');">499-250</span>
+													<span onclick="printRes('1-249');">249-1</span>
 												</div>
 											</div>
 											<?php
