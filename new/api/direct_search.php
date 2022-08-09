@@ -91,6 +91,19 @@ switch ($filter->getDict()) {
 		}
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
 		break;
+	case 'gfasa':
+		/* get data from database and send them */
+		$res = db_right_dict(12, $_POST["range"]);
+		$data = array();
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"stimulus"=>$res[$i][0],
+				"reactions"=>$res[$i][2]
+			));
+		}
+		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
+		break;
 	default:
 		/* Make a default case */
 		print json_encode(array("status" => 400, 'status_message' =>'Incorrect syntax of parameters.',"error"=>array("Dictionary not found.")));

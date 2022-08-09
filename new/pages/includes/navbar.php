@@ -26,6 +26,7 @@
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_sanfn.php"'; ?>><?php echo $lang->navbar->sanfn->{$_SESSION["lang"]}; ?></a></li>
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fas1_red.php"'; ?>><?php echo $lang->navbar->fas1_red->{$_SESSION["lang"]}; ?></a></li>
 					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_fas2_red.php"'; ?>><?php echo $lang->navbar->fas2_red->{$_SESSION["lang"]}; ?></a></li>
+					<li><a <?php echo 'href="'.$BASE_PATH.'pages/dict_gfasa.php"'; ?>><?php echo $lang->navbar->gfasa->{$_SESSION["lang"]}; ?></a></li>
 				</ul>
 			</li>
 			<li><a <?php echo 'href="'.$BASE_PATH.'pages/help.php"'; ?>><?php echo $lang->navbar->help->{$_SESSION["lang"]}; ?></a></li>

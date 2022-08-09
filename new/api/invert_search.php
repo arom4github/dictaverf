@@ -143,6 +143,29 @@ switch ($filter->getDict()) {
 
 		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
 		break;
+	case 'gfasa':
+		/* get data from database and send them */
+		$data = array();
+		switch ($filter->getMethod()) {
+			case 'stim':
+				$res = db_back_dict(13, explode("-", $_POST["range"]),$filter);
+				break;
+			case 'react':
+				$res = db_back_dict(13, explode("-", $_POST["range"]),$filter);
+				break;
+			default:
+				$res = db_back_dict(13, $_POST["range"],$filter);
+				break;
+		}
+		for ($i=0; $i < count($res); $i++) { 
+			array_push($data,array(
+				"id"=>$i+1,
+				"reaction"=>$res[$i][0],
+				"stimulus"=>$res[$i][2]
+			));
+		}
+		print json_encode(array("status" => 200, 'status_message' =>'OK.', "data" => $data));
+		break;
 	default:
 		/* Make a default case */
 		print json_encode(array("status" => 400, 'status_message' =>'Incorrect syntax of parameters.',"error"=>array("Dictionary not found.")));

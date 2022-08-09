@@ -40,6 +40,10 @@
 			"fr":"Nouveau dictionnaire réduit des associations évoquées par les mots pour le français 2020 (DAF-2r)",
 			"ru":"Сокращенный новый французский ассоциативный словарь 2019 (ФАС-2с)"
 		},
+		"gfasa":{
+			"fr":"Grand dictionnaire associatif français annoté (GDAFA)",
+			"ru":"Большой аннотированный французский ассоциативный словарь (БАФАС)"
+		},
 		"help":{
 			"fr":"Aide",
 			"ru":"Помощь"
@@ -121,6 +125,10 @@
 		"fas2_red":{
 			"fr":"DAF-2r",
 			"ru":"ФАС-2с"
+		},
+		"gfasa":{
+			"fr":"GDAFA",
+			"ru":"БАФАС"
 		},
 		"about_title":{
 			"fr":"A propos",
@@ -256,6 +264,15 @@
 		"stim":{
 			"fr":"Tous les questionnaires contiennent les 100 mots suivants:",
 			"ru":"Все анкеты содержали следующие 100 стимулов:"
+		}
+	},
+	"gfasa":{
+		"about":{
+			"link":"gfasa_about.html"
+		},
+		"stim":{
+			"fr":"Les participants à l’expérience ont fourni des associations aux mots suivants:",
+			"ru":"Участникам эксперимента были предоставлены следующие стимулы:"
 		}
 	},
 	"help":{

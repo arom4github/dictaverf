@@ -6,7 +6,7 @@
 */
 
 /* Edit this for production */
-$BASE_PATH = "/new/";
+$BASE_PATH = "/";
 
 /* Start session */
 session_start();

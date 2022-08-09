@@ -284,6 +284,7 @@ function printRes(range){
 			case "fas1_red":
 			case "fas2_red":
 			case "fas":
+			case "gfasa":
 				switch (url.searchParams.get("num")) {
 					case "3":
 						printResInvertFas(range,filter,"react");
@@ -318,6 +319,7 @@ function printRes(range){
 		switch ($('#dictionary').val()) {
 			case "fas":
 			case "fas2":
+			case "gfasa":
 			case "fas1_red":
 			case "fas2_red":
 				printResDirectFas(range,filter,false);

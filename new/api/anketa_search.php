@@ -14,6 +14,7 @@ $test = 12;
 /* Use the good fonction for each dictionary and each method then send data */
 switch ($_POST["dict"]) {
 	case 'fas':   $test = 12; break;
+	case 'gfasa': $test = 13; break;
 	case 'fas2': $test = 35; break;
 	case 'fas1_red': $test = 38; break;
 	case 'fas2_red': $test = 37; break;
