@@ -135,8 +135,8 @@
 			"ru":"О словаре"
 		},
 		"stim_title":{
-			"fr":"Stimuli",
-			"ru":"Стимулы"
+			"fr":"Stimulus",
+			"ru":"Стимул"
 		},
 		"reaction_title":{
 			"fr":"Réponse",
@@ -154,7 +154,7 @@
 		},
 		"search_invert":{
 			"title":{
-				"fr":"Dictionnaire inversé",
+				"fr":"Dictionnaire inverse",
 				"ru":"Обратный словарь"
 			},
 			"description":{
@@ -182,7 +182,7 @@
 				"ru":"По отдельному стимулу"
 			},
 			"reaction":{
-				"fr":"pour un réponses",
+				"fr":"pour un réponse",
 				"ru":"По отдельной реакции"
 			},
 			"stim":{

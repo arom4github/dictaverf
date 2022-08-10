@@ -28,6 +28,7 @@
 						<li><a href="dict_sanfn.php"><?php echo $lang->dict->sanfn->{$_SESSION["lang"]}; ?></a></li>
 						<li><a href="dict_fas1_red.php"><?php echo $lang->dict->fas1_red->{$_SESSION["lang"]}; ?></a></li>
 						<li><a href="dict_fas2_red.php"><?php echo $lang->dict->fas2_red->{$_SESSION["lang"]}; ?></a></li>
+						<li><a href="dict_gfasa.php"><?php echo $lang->dict->gfasa->{$_SESSION["lang"]}; ?></a></li>
 					   </ul>
 					</li>
 				    </ul>

@@ -201,7 +201,7 @@
                                             vieille, vieux, vif, village, ville, vin, violence, violent, visage, viser,
                                             visite, vite, vitesse, vivant, vivre, voie, voile, voir, voisin, voiture,
                                             voix, voler, volonté, vote, voter, vouloir, voyage, vrai, vue, yeux,
-                                            zone, сœur, сonnaitre, сouter
+                                            zone
 </p>
 				</div>
 				<div id="dict_direct">

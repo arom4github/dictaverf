@@ -93,7 +93,7 @@ switch ($filter->getDict()) {
 		break;
 	case 'gfasa':
 		/* get data from database and send them */
-		$res = db_right_dict(12, $_POST["range"]);
+		$res = db_right_dict(13, $_POST["range"]);
 		$data = array();
 		for ($i=0; $i < count($res); $i++) { 
 			array_push($data,array(
