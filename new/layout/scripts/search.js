@@ -64,9 +64,11 @@ function printResDirectFas(range,filter,isDefault){
 			show_loader(false);
 			switch (response.status) {
 				case 200:
-					$('<div class="result-table"><table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
+					$('<div class="result-table">'+'<h2>'+help_msg+'</h2>'+
+							'<table><thead><tr><th>#</th><th>Stimulus</th><th>Reaction</th></tr></thead><tbody></tbody></table></div>').appendTo(".result");
 					for (let index = 0; index < data.length; index++) {
-						$('<tr><td>'+data[index].id+'</td><td>'+data[index].stimulus+'</td><td>'+data[index].reactions+'</td></tr>').appendTo(".result-table table tbody");
+						$('<tr><td>'+data[index].id+'</td><td>'+data[index].stimulus+'</td>'+
+						'<td class="res_row">'+data[index].reactions+'</td></tr>').appendTo(".result-table table tbody");
 					}
 					break;
 				case 400:

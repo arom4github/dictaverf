@@ -223,9 +223,37 @@
 	<script>
 		init_loader();
 		var lang='<?php echo $_SESSION["lang"];?>';
+		var comments="";
+		var help_msg = "<?php echo $lang->dict->search_direct->help_msg->{$_SESSION["lang"]};  ?>";
 		<?php
 		/* initialization of search method */
 		if(isset($_GET["method"]) && isset($_GET["num"])){
+			if($_GET["method"]=="dir" ){
+                ?>
+				document.addEventListener('keydown', e => {
+				  if (e.ctrlKey && e.key === 's') {
+				    e.preventDefault();
+				    var sel = window.getSelection()
+				    expl = "";
+				    r = sel.toString()
+				    s = sel.anchorNode.parentElement.parentElement.childNodes[1].getInnerHTML().toString()
+				    $.each(comments, function(i,v){ 
+					if(v[0] == s  && v[1] == r) expl = v[2];
+				    });
+				    if(expl != ""){
+					console.log(s + ' => ' + r + ':' + expl);
+					//$("#expl").show();
+					//$("#expl").text('<h2>'+ s + ' => ' + r + '</h2>'+expl);
+					alert(s + ' => ' + r + '\n'+expl);
+				    }else{
+					console.log("Explanation not found!");
+					alert("Explanation not found!");
+				    }
+				  }
+				});
+				$.getJSON("/comments.json",function(response) {comments=response;});
+                <?php
+			}
 			if($_GET["method"]=="dir" && !in_array($_GET["num"],array('1'))){
 				echo "letterGen();";
 			}elseif($_GET["method"]=="inv" && !in_array($_GET["num"],array('1','2','3'))){

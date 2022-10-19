@@ -147,6 +147,10 @@
 				"fr":"Dictionnaire direct",
 				"ru":"Прямой словарь"
 			},
+			"help_msg":{
+				"fr":"Vous pouvez voir un commentaire de certaines réactions en les surlignant et cliquant Ctrl+s",
+				"ru":"Чтобы прочитать комментарий о некоторых реакциях, выделяйте их и нажмите Ctrl+s!"
+			},
 			"description":{
 				"fr":"Cette méthode est utilisée pour rechercher une réponse à un stimulus.",
 				"ru":"Этот метод используется для поиска реакции на стимул."
@@ -182,7 +186,7 @@
 				"ru":"По отдельному стимулу"
 			},
 			"reaction":{
-				"fr":"pour un réponse",
+				"fr":"pour une réponse",
 				"ru":"По отдельной реакции"
 			},
 			"stim":{
